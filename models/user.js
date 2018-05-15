@@ -27,38 +27,37 @@ module.exports = function(sequelize, DataTypes) {
                 isEmail: true,
             }
         },
-        password: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validation: {
-                len: [1, 140],
-                notEmpty: true,
-            }
-        },
-        confirm_pw :{
-        type: DataTypes.STRING,
-        allowNull: false,
-        validation: {
-            notEmpty: true,
-            matchPW (password) {
-                if (confirm_pw !== password) {
-                    throw new Error("Passwords do not match")
-                    }
-                }
-            }
-        },
+        // password: {
+        //     type: DataTypes.STRING,
+        //     allowNull: false,
+        //     validation: {
+        //         len: [1, 140],
+        //         notEmpty: true,
+        //     }
+        // },
+        // confirm_pw :{
+        // type: DataTypes.STRING,
+        // allowNull: false,
+        // validation: {
+        //     notEmpty: true,
+        //     matchPW (password) {
+        //         if (confirm_pw !== password) {
+        //             throw new Error("Passwords do not match")
+        //             }
+        //         }
+        //     }
+        // },
         mentor: {
             type: DataTypes.BOOLEAN,
             defaultValue: 0,
             allowNull: false
         },
-        age: {
-            type: DataTypes.INTEGER,
+        birthDay: {
+            type: DataTypes.DATEONLY,
             allowNull: false,
             validation: {
-                isInt: true,
-                min: 13,
-                max: 99,
+                isDate: true,
+                
             }
         },
         zip_code: {
