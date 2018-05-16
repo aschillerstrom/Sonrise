@@ -47,17 +47,16 @@ module.exports = function(sequelize, DataTypes) {
         //         }
         //     }
         // },
-        mentor: {
-            type: DataTypes.BOOLEAN,
-            defaultValue: 0,
-            allowNull: false
-        },
+        // mentor: {
+        //     type: DataTypes.BOOLEAN,
+        //     defaultValue: 0,
+        //     allowNull: false
+        // },
         birthDay: {
             type: DataTypes.DATEONLY,
             allowNull: false,
             validation: {
-                isDate: true,
-                
+                isDate: true, 
             }
         },
         zip_code: {
