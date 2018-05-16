@@ -38,14 +38,14 @@ module.exports = function(app) {
             birthDay: newUser.birthDay,
             zip_ciode: newUser.zip_code
         }).then(function(dbUser){
-            res.jsopn(dbUser);
+            res.json(dbUser);
         });
     });
 
     app.delete("api/users/:id", function(req, res){
         User.destroy({
             where: {
-                id: rq.params.id
+                id: req.params.id
             }
         }).then(function(dbUser) {
             res.json(dbUser)
@@ -60,13 +60,13 @@ module.exports = function(app) {
             email: updateUser.email,
             //mentor: updateUser.mentor,
             birthDay: updateUser.birthDay,
-            zip_ciode: updateUser.zip_code
+            zip_code: updateUser.zip_code
         }, {
             where: {
                 id: updateUser.id
             }
         }).then(function(dbUser) {
-            res.json(dbUSer);
+            res.json(dbUser);
         });
     });
     
