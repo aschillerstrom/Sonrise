@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Son Rise Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase.js"></script>
+    
+</head>
+<body>
+    <div class="container" id="modal1">
+            <h2>Welcome! Please select from the following:</h2>
+            <button id="returning" class="btn btn-action">Returning User</button>
+            <button id="newuser" class="btn btn-secondary">New User</button>
+    </div>
+
+    <div class="container" id="returnmodal">
+        <h2>Input your email and password to login</h2>
+        <input id="txtEmail" type="email" placeholder="email@email.com" />
+        <input id="txtPassword" type="password" placeholder="password"/>
+        <button id="btnLogin" class="btn btn-action">Log In</button>
+    </div>   
+    <div class="container" id="newusermodal">
+        <h2>Please answer the following questions:</h2>
+        <input id="txtEmail" type="email" placeholder="email@email.com" />
+        <input id="txtPassword" type="password" placeholder="password"/>
+        <button id="btnSignUp" class="btn btn-secondary">Sign Up</button>
+    </div> 
+<script src="login.js" type="text/javascript"></script> 
+<script>
+     console.log("login.js is working");
+  var config = {
+    apiKey: "AIzaSyASBaPuT5BNt2eXIjn_L4M00q799FbY61o",
+    authDomain: "sonrise-b5e2e.firebaseapp.com",
+    databaseURL: "https://sonrise-b5e2e.firebaseio.com",
+    projectId: "sonrise-b5e2e",
+    storageBucket: "sonrise-b5e2e.appspot.com",
+    messagingSenderId: "787522362715"
+  };
+    firebase.initializeApp(config);
+
+//hide and show modals
+    var btnReturning = document.getElementById('returning');
+    var btnNewUser = document.getElementById('newuser'); 
+    document.getElementById("returnmodal").style.visibility = "hidden";
+    document.getElementById("newusermodal").style.visibility = "hidden";
+
+    btnReturning.addEventListener('click', e => {
+        document.getElementById("modal1").style.visibility = "hidden";
+        document.getElementById("newusermodal").style.visibility = "hidden";
+        document.getElementById("returnmodal").style.visibility = "visible";
+    });
+
+    btnNewUser.addEventListener('click', e => {
+        document.getElementById("newusermodal").style.visibility = "visible";
+        document.getElementById("modal1").style.visibility = "hidden";
+        document.getElementById("returnmodal").style.visibility = "hidden";
+    });
+   
+   
+    const txtEmail = document.getElementById('txtEmail');
+    const txtPassword = document.getElementById('txtPassword');
+    const btnLogin = document.getElementById('btnLogin');
+    const btnSignUp = document.getElementById('btnSignUp');
+    const auth = firebase.auth()
+    //Login event
+    btnLogin.addEventListener('click', e => {
+      //get email
+      const email = txtEmail.value;
+      const pass = txtPassword.value;
+      const auth = firebase.auth();
+
+      //Sign in
+      const promise = auth.signInWithEmailAndPassword(email, pass);
+      promise.then(function() {
+        window.location.href = "index.html";
+      })
+      promise.catch(e => {
+          console.log(e.message);
+        window.alert('Error: ' + e.message);
+        });
+    
+
+    });
+    
+    //Sign up event
+    btnSignUp.addEventListener('click', e => {
+          //Create  check for real email   
+      
+      //get email
+          const email = txtEmail.value;
+          const pass = txtPassword.value;
+       
+          //Sign in
+          const promise = auth.createUserWithEmailAndPassword(email, pass);
+         
+
+          promise.catch(e => console.log(e.message));
+    
+    });
+
+    auth.onAuthStateChanged(firebaseUser => {
+        if(firebaseUser) {
+          console.log(firebaseUser);
+          
+        } else {
+          console.log('not logged in');
+        }
+    });
+    
+  
+</script>
+</body>
+</html>
