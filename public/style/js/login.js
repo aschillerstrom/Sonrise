@@ -9,6 +9,13 @@
     messagingSenderId: "787522362715"
   };
     firebase.initializeApp(config);
+    //hide and show modals
+    var modal1 =document.getElementById("modal1");
+    var returnmodal =document.getElementById("returnmodal");
+    var newusermodal =document.getElementById("newusermodal");
+    returnmodal.display = "block";
+    newusermodal.display = "block";
+
 
    
     const txtEmail = document.getElementById('txtEmail');
