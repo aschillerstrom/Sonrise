@@ -1,26 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Son Rise Login</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Son Rise Login</title>
 
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="style/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="style/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase.js"></script>
     
 </head>
 <body>
-    <div class="container" id="modal1">
-            <h2>Welcome! Please select from the following:</h2>
-            <button id="returning" class="btn btn-action">Returning User</button>
-            <button id="newuser" class="btn btn-secondary">New User</button>
-    </div>
+        <div id="index-banner" class="parallax-container">
+            <div class="section no-pad-bot">
+                <div class="container">
+                    <br><br>
+                    <!-- Modal Trigger -->
+                    <h2>Welcome!</h2>
+                            <h2>Please select from the following:</h2>
+                    <a class="waves-effect waves-light btn modal-trigger" id="returning" href="#returnmodal">Returning User</a>
+                    <a class="waves-effect waves-light btn modal-trigger" id="newuser" href="#newusermodal">New User</a>
+                    <!-- Modal Structure -->
+                    <div id="modal1" class="modal">
+                        <div class="modal-content">
+                            <h4>Input your email and password to login</h4>
+                            <input id="txtEmail" type="email" placeholder="email@email.com" />
+                            <input id="txtPassword" type="password" placeholder="password"/>
+                            <button id="btnLogin" class="btn btn-action">Log In</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="parallax"></div>
+         </div>
+    
 
+
+
+              
     <div class="container" id="returnmodal">
-        <h2>Input your email and password to login</h2>
-        <input id="txtEmail" type="email" placeholder="email@email.com" />
-        <input id="txtPassword" type="password" placeholder="password"/>
-        <button id="btnLogin" class="btn btn-action">Log In</button>
+        
+        
     </div>   
     <div class="container" id="newusermodal">
         <h2>Please answer the following questions:</h2>
@@ -28,6 +50,43 @@
         <input id="txtPassword" type="password" placeholder="password"/>
         <button id="btnSignUp" class="btn btn-secondary">Sign Up</button>
     </div> 
+    <footer class="page-footer teal">
+            <div class="container">
+              <div class="row">
+                <div class="col l6 s12">
+                  <h5 class="white-text">Company Bio</h5>
+                  <p class="grey-text text-lighten-4">We are a team of developer students working on this project like it's our full time job. 
+                    Please support our mission</p>
+        
+        
+                </div>
+                <div class="col l3 s12">
+                  <h5 class="white-text">Settings</h5>
+                  <ul>
+                    <li><a class="white-text" href="#!">Link 1</a></li>
+                    <li><a class="white-text" href="#!">Link 2</a></li>
+                    <li><a class="white-text" href="#!">Link 3</a></li>
+                    <li><a class="white-text" href="#!">Link 4</a></li>
+                  </ul>
+                </div>
+                <div class="col l3 s12">
+                  <h5 class="white-text">Our Team</h5>
+                  <ul>
+                    <li><a class="white-text" href="#!">Amy</a></li>
+                    <li><a class="white-text" href="#!">Chase</a></li>
+                    <li><a class="white-text" href="#!">Kat</a></li>
+                    <li><a class="white-text" href="#!">Monir</a></li>
+                    <li><a class="white-text" href="#!">Wendy</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="footer-copyright">
+              <div class="container">
+              <!--Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>-->
+              </div>
+            </div>
+          </footer>
 <script src="login.js" type="text/javascript"></script> 
 <script>
      console.log("login.js is working");
@@ -42,12 +101,12 @@
     firebase.initializeApp(config);
 
 //hide and show modals
-    var btnReturning = document.getElementById('returning');
+    var returning = document.getElementById('returning');
     var btnNewUser = document.getElementById('newuser'); 
     document.getElementById("returnmodal").style.visibility = "hidden";
     document.getElementById("newusermodal").style.visibility = "hidden";
 
-    btnReturning.addEventListener('click', e => {
+    returning.addEventListener('click', e => {
         document.getElementById("modal1").style.visibility = "hidden";
         document.getElementById("newusermodal").style.visibility = "hidden";
         document.getElementById("returnmodal").style.visibility = "visible";
