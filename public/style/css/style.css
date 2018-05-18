@@ -1,15 +1,14 @@
 /* Custom Stylesheet */
 
-/**
- * Use this file to override Materialize files so you can update
- * the core Materialize files in the future
- *
- * Made By MaterializeCSS.com
- */
+
 h5{
   color:aliceblue;
   text-align: center;
 }
+.sonrise{
+    margin-top: -4%;
+    margin-bottom: 2%
+  }
 nav ul a,
 nav .brand-logo {
   color: #444;
@@ -20,7 +19,6 @@ h1{
 }
 .white-text{
   text-align: color;
-
 }
 p {
   line-height: 2rem;
@@ -28,7 +26,6 @@ p {
 }
 li{
   text-align:center;
-
 }
 #download-button{
 margin: 1%;
