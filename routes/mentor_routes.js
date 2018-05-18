@@ -52,20 +52,19 @@ module.exports = function(app) {
     app.post("api/mentors", function(req, res){
         var newMentor = req.body;
         Mentor.create({
-            first_name: newMentor.first_name,
-            last_name: newMentor.last_name,
-            bio: newMentor.bio,
-            available: newMentor.available,
-            dOne: newMentor.dOne,
-            dOneSpecific: newMentor.dOneSpecific,
-            dTwo: newMentor.dTwo,
-            dTwoSpecific: newMentor.dTwoSpecific,
-            dThree: newMentor.dThree,
-            dThreeSpecific: newMentor.dThreeSpecific,
-            dFour: newMentor.dfour,
-            dFourSpecific: newMentor.dfourSpecific,
-            dFive: newMentor.dFive,
-            dFiveSpecific: newMentor.dFiveSpecific,   
+            first_name: newMentee.first_name,
+            last_name: newMentee.last_name,
+            bio: newMentee.bio,
+            d_one: newMentee.d_one,
+            d_oneData: newMentee.d_oneData,
+            d_two: newMentee.d_two,
+            d_twoData: newMentee.d_twoData,
+            d_three: newMentee.d_three,
+            dT_threeData: newMentee.d_threeData,
+            d_four: newMentee.d_four,
+            d_fourData: newMentee.df_fourData,
+            d_five: newMentee.d_five,
+            d_fiveData: newMentee.d_fiveData,  
         }).then(function(dbMentor){
             res.json(dbMentor);
         });
@@ -75,20 +74,19 @@ module.exports = function(app) {
     app.put("api/mentors/", function(req, res){
         var updateMentor = req.body;
         Mentor.update({
-            first_name: updateMentor.first_name,
-            last_name: updateMentor.last_name,
-            bio: updateMentor.bio,
-            available: updateMentor.available,
-            dOne: updateMentor.dOne,
-            dOneSpecific: updateMentor.dOneSpecific,
-            dTwo: updateMentor.dTwo,
-            dTwoSpecific: updateMentor.dTwoSpecific,
-            dThree: updateMentor.dThree,
-            dThreeSpecific: updateMentor.dThreeSpecific,
-            dFour: updateMentor.dfour,
-            dFourSpecific: updateMentor.dfourSpecific,
-            dFive: updateMentor.dFive,
-            dFiveSpecific: updateMentor.dFiveSpecific, 
+            first_name: newMentee.first_name,
+            last_name: newMentee.last_name,
+            bio: newMentee.bio,
+            d_one: newMentee.d_one,
+            d_oneData: newMentee.d_oneData,
+            d_two: newMentee.d_two,
+            d_twoData: newMentee.d_twoData,
+            d_three: newMentee.d_three,
+            dT_threeData: newMentee.d_threeData,
+            d_four: newMentee.d_four,
+            d_fourData: newMentee.df_fourData,
+            d_five: newMentee.d_five,
+            d_fiveData: newMentee.d_fiveData, 
         }, {
             where: {
                 id: updateMentor.id 

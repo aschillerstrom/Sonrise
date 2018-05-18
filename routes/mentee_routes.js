@@ -35,7 +35,7 @@ module.exports = function(app) {
     app.get("/mentees/:dOne", function(req, res){
         Mentee.findAll({
             where: {
-                dOne: req.params.dOne
+                d_one: req.params.d_one
             }
         }).then(function(dbMentee){
             return res.render('mentees_dOne', dbMentee)
@@ -49,16 +49,16 @@ module.exports = function(app) {
             first_name: newMentee.first_name,
             last_name: newMentee.last_name,
             bio: newMentee.bio,
-            dOne: newMentee.dOne,
-            dOneSpecific: newMentee.dOneSpecific,
-            dTwo: newMentee.dTwo,
-            dTwoSpecific: newMentee.dTwoSpecific,
-            dThree: newMentee.dThree,
-            dThreeSpecific: newMentee.dThreeSpecific,
-            dFour: newMentee.dfour,
-            dFourSpecific: newMentee.dfourSpecific,
-            dFive: newMentee.dFive,
-            dFiveSpecific: newMentee.dFiveSpecific,
+            d_one: newMentee.d_one,
+            d_oneData: newMentee.d_oneData,
+            d_two: newMentee.d_two,
+            d_twoData: newMentee.d_twoData,
+            d_three: newMentee.d_three,
+            dT_threeData: newMentee.d_threeData,
+            d_four: newMentee.d_four,
+            d_fourData: newMentee.df_fourData,
+            d_five: newMentee.d_five,
+            d_fiveData: newMentee.d_fiveData,
         }).then(function(dbMentee){
             res.json(dbMentee);
         });
@@ -68,24 +68,24 @@ module.exports = function(app) {
     app.update("api/mentees", function(req, res){
         var updateMentee = req.body;
         Mentee.update({
-            first_name: updateMentee.first_name,
-            last_name: updateMentee.last_name,
-            bio: updateMentee.bio,
-            dOne: updateMentee.dOne,
-            dOneSpecific: updateMentee.dOneSpecific,
-            dTwo: updateMentee.dTwo,
-            dTwoSpecific: updateMentee.dTwoSpecific,
-            dThree: updateMentee.dThree,
-            dThreeSpecific: updateMentee.dThreeSpecific,
-            dFour: updateMentee.dfour,
-            dFourSpecific: updateMentee.dfourSpecific,
-            dFive: updateMentee.dFive,
-            dFiveSpecific: updateMentee.dFiveSpecific,
+            first_name: newMentee.first_name,
+            last_name: newMentee.last_name,
+            bio: newMentee.bio,
+            d_one: newMentee.d_one,
+            d_oneData: newMentee.d_oneData,
+            d_two: newMentee.d_two,
+            d_twoData: newMentee.d_twoData,
+            d_three: newMentee.d_three,
+            dT_threeData: newMentee.d_threeData,
+            d_four: newMentee.d_four,
+            d_fourData: newMentee.df_fourData,
+            d_five: newMentee.d_five,
+            d_fiveData: newMentee.d_fiveData,
         },{
             where: {
                 id: updateMentee.id
             }
-        }).then(function(deMentee){
+        }).then(function(dbMentee){
             res.json(dbMentee);
         });
     });
@@ -96,8 +96,8 @@ module.exports = function(app) {
             where: {
                 id: req.params.id
             }
-        }).then(function(dbMentor) {
-            res.json(dbMentor);
+        }).then(function(dbMentee) {
+            res.json(dbMentee);
         });
     })
 
