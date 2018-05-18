@@ -21,6 +21,16 @@ module.exports = function(app) {
         })
     });
 
+    app.get("/mentees/:online", function(req, res) {
+        Mentee.findAll({
+            where: {
+                online :true
+            }
+        }).then(function(dbMentee) {
+            return res.render('mentee_online', dbMentee)
+        });
+    });
+
     //find all mentees of specific dimension
     app.get("/mentees/:dOne", function(req, res){
         Mentee.findAll({
@@ -28,7 +38,7 @@ module.exports = function(app) {
                 dOne: req.params.dOne
             }
         }).then(function(dbMentee){
-            return res.render('mentee_dOne', dbMentee)
+            return res.render('mentees_dOne', dbMentee)
         });
     });
 

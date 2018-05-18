@@ -18,13 +18,29 @@ module.exports = function(sequelize, DataTypes) {
                 isAlpha: true,
             }
         },
-        available: {
-            type: DataTypes.BOOLEAN,
-            allowNull: false
-        },
         bio: {
             type: DataTypes.TEXT,
             allowNull: true
+        },
+        birthday: {
+            type: DataTypes.DATEONLY,
+            allowNull: false,
+            validation: {
+                isDate: true
+            }
+        },
+        zip_code: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            validation: {
+                isInt: true,
+                 min: 5,
+                max: 10,
+            }
+        },
+        online: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false
         },
         dOne: {
             type: DataTypes.STRING,
