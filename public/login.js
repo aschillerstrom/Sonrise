@@ -56,7 +56,7 @@ console.log("login.js is working");
               const promise = auth.createUserWithEmailAndPassword(email, pass);
               promise.then(function() {
               window.alert("Thanks for signing up!")
-              window.location.href = "index.html";
+              window.location.href = "profile.html";
               })
               promise.catch(e => window.alert(e.message));
 
