@@ -16,7 +16,7 @@
 
 {{#each Mentee}}
 
-<a href="ask andrew what to put in here for each tutor profile" class="ment_display">
+<a href="./profile.handlebars <!--(i think this is correct, but should ask TA) -->" class="ment_display">
     <div class="ment_all" id="mentee_" + {{this.id}}>
         <section class="pic_on_left">
             <div class="ment_pic round photo spc-sm-s">
@@ -30,7 +30,7 @@
             </div>
         </section>
         <section class="info_in_mid">
-            <h4 class="spc-sm-w">{{this.first_name}} {{this.last_name}}</h5>
+            <h4 class="names">{{this.first_name}} {{this.last_name}}</h5>
                 <p class="ment_bio">{{this.bio}}
                     <span class="read_more">read more</span>
                 </p>
