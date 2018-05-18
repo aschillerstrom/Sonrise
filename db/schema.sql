@@ -5,7 +5,7 @@ USE sonrise_db;
 -- Create the mentor table.
 CREATE TABLE mentor
 (
-id int  AUTO_INCREMENT NOT NULL,
+id int AUTO_INCREMENT NOT NULL,
 firstName varchar(255) NOT NULL,
 lastName varchar(255) NOT NULL,
 email varchar(255) NOT NULL,
@@ -19,7 +19,7 @@ PRIMARY KEY (id)
 
 CREATE TABLE mentee
 (
-id int  AUTO_INCREMENT NOT NULL,
+id int AUTO_INCREMENT NOT NULL,
 firstName varchar(255) NOT NULL,
 lastName varchar(255) NOT NULL,
 email varchar(255) NOT NULL,
