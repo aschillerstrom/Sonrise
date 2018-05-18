@@ -1,4 +1,4 @@
-modeule.exports = function(sequelize, DataTypes) {
+module.exports = function(sequelize, DataTypes) {
     var Mentee = sequelize.define("Mentee", {
         first_name: {
             type: DataTypes.STRING,
@@ -21,7 +21,7 @@ modeule.exports = function(sequelize, DataTypes) {
         available: {
             type: DataTypes.BOOLEAN,
             allowNull: false
-        }
+        },
         bio: {
             type: DataTypes.TEXT,
             allowNull: true

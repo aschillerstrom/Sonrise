@@ -1,4 +1,3 @@
-yyh
 var Mentee = db.Mentee;
 
 // mentee routes
