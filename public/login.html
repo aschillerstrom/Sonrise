@@ -88,25 +88,10 @@
     messagingSenderId: "787522362715"
   };
     firebase.initializeApp(config);
-
-//hide and show modals
-    //var returning = document.getElementById('returning');
-    //var btnNewUser = document.getElementById('newuser'); 
-    //document.getElementById("modal2").style.visibility = "hidden";
-    //document.getElementById("newusermodal").style.visibility = "hidden";
-
-    //returning.addEventListener('click', e => {
-      //  document.getElementById("modal1").style.visibility = "hidden";
-        //document.getElementById("newusermodal").style.visibility = "hidden";
-        ///document.getElementById("modal2").style.visibility = "visible";
-    //});
-
-    //btnNewUser.addEventListener('click', e => {
-      //  document.getElementById("newusermodal").style.visibility = "visible";
-        //document.getElementById("modal1").style.visibility = "hidden";
-        //document.getElementById("modal2").style.visibility = "hidden";
-    //});
-   
+    function validateEmail(email) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+};
    
     const txtEmail = document.getElementById('txtEmail');
     const txtPassword = document.getElementById('txtPassword');
@@ -119,6 +104,7 @@
       const email = txtEmail.value;
       const pass = txtPassword.value;
       const auth = firebase.auth();
+      
 
       //Sign in
       const promise = auth.signInWithEmailAndPassword(email, pass);
@@ -127,7 +113,7 @@
       })
       promise.catch(e => {
           console.log(e.message);
-        window.alert('Error: ' + e.message);
+        window.alert('Error: Please check your email address and password. ' + e.message);
         });
     
 
