@@ -18,10 +18,6 @@ module.exports = function(sequelize, DataTypes) {
                 isAlpha: true,
             }
         },
-        bio: {
-            type: DataTypes.TEXT,
-            allowNull: true
-        },
         birthday: {
             type: DataTypes.DATEONLY,
             allowNull: false,
@@ -50,6 +46,10 @@ module.exports = function(sequelize, DataTypes) {
                 isEmpty: false,
                 isAlpha: true
             }
+        },
+        bio: {
+            type: DataTypes.TEXT,
+            allowNull: true
         },
         dOneSpecific: {
             type: DataTypes.TEXT,

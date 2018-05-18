@@ -27,6 +27,16 @@ module.exports = function(app) {
         })
     });
 
+    app.get("/mentors/:online", function(req, res) {
+        Mentor.findAll({
+            where: {
+                online :true
+            }
+        }).then(function(dbMentee) {
+            return res.render('mentors_online', dbMentee)
+        });
+    });
+
     //find mentor by dimension
     app.get("/mentors/:dOne", function(req, res){
         Mentor.findAll({
