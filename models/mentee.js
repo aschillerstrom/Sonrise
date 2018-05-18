@@ -38,6 +38,10 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.BOOLEAN,
             allowNull: false
         },
+        bio: {
+            type: DataTypes.TEXT,
+            allowNull: true
+        },
         dOne: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -46,10 +50,6 @@ module.exports = function(sequelize, DataTypes) {
                 isEmpty: false,
                 isAlpha: true
             }
-        },
-        bio: {
-            type: DataTypes.TEXT,
-            allowNull: true
         },
         dOneSpecific: {
             type: DataTypes.TEXT,
