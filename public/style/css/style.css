@@ -126,3 +126,9 @@ footer.page-footer {
 #txtPassword {
   color: white;
 }
+#resimage {
+  background: url("../../images/res.png");
+  background-size: 100%;
+  
+
+}
