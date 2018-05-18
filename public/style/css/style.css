@@ -10,7 +10,7 @@ h5{
     margin-bottom: 2%
   }
 nav ul a,
-nav .brand-logo {
+nav .brand-logo, nav{
   color: #444;
   text-align: center;
 }
