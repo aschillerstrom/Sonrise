@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Home Page</title>
+  <title>New User Questionaire</title>
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -53,22 +53,86 @@
         
             <form action="#">
                     <p>
-                      <label>
-                          <h6>Would you like to be a mentor or mentee?(required)</h6>
-                        <input value=true  name="group1" type="radio" checked />
-                        <span>Mentor</span>
-                      </label>
-                    
-                      <label>
-                            <input value=false  name="group1" type="radio" />
-                            <span>Mentee</span>
-                      </label>
-                    </p>
-                    
+                            <label>
+                        <p id="firstlabel">Are you interested in becoming a mentor or mentee?</p>
+                              <input name="group1" type="radio" value=true checked />
+                              <span>Mentor</span>
+                            </label>
+                          
+                            <label>
+                              <input class="with-gap" name="group1" type="radio" value=false />
+                              <span>Mentee</span>
+                            </label>
+                          </p>
+                    <div class="row">
+                            <div class="input-field col s6">
+                              <input placeholder="First Name" id="first_name" type="text" class="validate">
+                              <label for="first_name">Full Name (required)</label>
+                            </div>
+                            <div class="input-field col s6">
+                              <input id="last_name" type="text" class="validate">
+                              <label for="last_name">Last Name</label>
+                            </div>
+                          </div>
+                          <div class="row">
+                              <div class="input-field col s12">
+                                <input id="email" type="email" class="validate">
+                                <label for="email">Email</label>
+                              </div>
+                            </div>
+                            <div class="file-field input-field">
+                                <div class="btn">
+                                  <span>Upload a profile picture</span>
+                                  <input type="file">
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text">
+                                </div>
+                            </div>
+                            <div class="row">
+                                    <form class="col s12">
+                                      <div class="row">
+                                        <div class="input-field col s12">
+                                          <textarea id="textarea1" class="materialize-textarea"></textarea>
+                                          <label for="textarea1">Bio: Tell us about you!</label>
+                                        </div>
+                                      </div>
+                                    </form>
+                            </div>
+
+                            <div class="row">
+                                <form class="col s12">
+                                  <div class="row">
+                                    <div class="input-field col s6">
+                                      <input id="input_text" type="text" data-length="5">
+                                      <label for="input_text">Zip Code</label>
+                                    </div>
+                                  </div>
+                            <label>What are you interested in?(required)</label>
+                            <select class="browser-default">
+                              <option value="" disabled selected>Choose your option</option>
+                              <option value="1">Physical</option>
+                              <option value="2">Spiritual</option>
+                              <option value="3">Professional</option>
+                              <option value="4">Academic</option>
+                              <option value="5">Personal</option>
+                            </select>
+                            <label>What else are you interested in?</label>
+                            <select class="browser-default">
+                              <option value="" disabled selected>Choose your option</option>
+                              <option value="1">Physical</option>
+                              <option value="2">Spiritual</option>
+                              <option value="3">Professional</option>
+                              <option value="4">Academic</option>
+                              <option value="5">Personal</option>
+                            </select>     
                   </form>
+                  
   
+                <br>
 
     </div>
+  </div>
   </div>
   <footer class="page-footer teal">
     <div class="container">
@@ -101,6 +165,7 @@
         </div>
       </div>
     </div>
+  
     <div class="footer-copyright">
       <div class="container">
       <!--Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>-->
@@ -114,6 +179,13 @@
   <script src="style/js/materialize.js"></script>
   <script src="style/js/init.js"></script>
   <script src="login.js" type="text/javascript"></script> 
+<script>
+      document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('select');
+            var instances = M.FormSelect.init(elems, options);
+        });
 
+     
+</script>
   </body>
 </html>
