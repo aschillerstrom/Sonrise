@@ -83,3 +83,4 @@ console.log("login.js is working");
 
       logOut();
     })
+    //firebase is working
