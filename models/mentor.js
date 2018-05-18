@@ -43,7 +43,7 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.TEXT,
             allowNull: true
         },
-        dOne: {
+        d_one: {
             type: DataTypes.STRING,
             allowNull: false,
             validation: {
@@ -52,11 +52,11 @@ module.exports = function(sequelize, DataTypes) {
                 isAlpha: true
             }
         },
-        dOneSpecific: {
+        d_oneData: {
             type: DataTypes.TEXT,
             allowNull: false,
         },
-        dTwo: {
+        d_two: {
             type: DataTypes.STRING,
             allowNull: true,
             validation: {
@@ -64,11 +64,11 @@ module.exports = function(sequelize, DataTypes) {
                 isAlpha: true
             }
         },
-        dTwoSpecific: {
+        d_twoData: {
             type: DataTypes.TEXT,
             allowNull: true,
         },
-        dThree: {
+        d_three: {
             type: DataTypes.STRING,
             allowNull: true,
             validation: {
@@ -76,11 +76,11 @@ module.exports = function(sequelize, DataTypes) {
                 isAlpha: true
             }
         },
-        dThreeSpecific: {
+        d_threeData: {
             type: DataTypes.TEXT,
             allowNull: true,
         },
-        dFour: {
+        d_four: {
             type: DataTypes.STRING,
             allowNull: true,
             validation: {
@@ -88,11 +88,11 @@ module.exports = function(sequelize, DataTypes) {
                 isAlpha: true
             }
         },
-        dFourSpecific: {
+        d_fourData: {
             type: DataTypes.TEXT,
             allowNull: true,
         },
-        dFive: {
+        d_five: {
             type: DataTypes.STRING,
             allowNull: true,
             validation: {
@@ -100,7 +100,7 @@ module.exports = function(sequelize, DataTypes) {
                 isAlpha: true
             }
         },
-        dFiveSpecific: {
+        d_fiveData: {
             type: DataTypes.TEXT,
             allowNull: true,
         },
