@@ -17,7 +17,7 @@ module.exports = function(app) {
     // });
 
     //find specific mentor
-    app.get("/mentors/:id", function(req, res){
+    app.get("/mentor/:id", function(req, res){
         Mentor.findAll({
             where: {
                 id: req.params.id,

@@ -11,7 +11,7 @@ module.exports = function(app) {
     });
 
     //find a specific mentee
-    app.get("/mentees/:id", function(req, res){
+    app.get("/mentee/:id", function(req, res){
         Mentee.findAll({
             where: {
                 id: req.params.id
