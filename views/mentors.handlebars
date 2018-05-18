@@ -1,0 +1,49 @@
+{{!-- {{#each Mentor}}
+    <div class="ment_all" id ="mentor_" + {{this.id}}>
+        <img src="#" alt="#" class="mentor_img">
+        <span class="ment_names">{{this.first_name}} {{this.last_name}}</span>
+        <p>{{this.bio}}</p>
+        <h2>Offering mentorship in:</h2>
+        <h3>{{this.d_one}} {{this.d_two}} {{this.d_three}} {{this.d_four}} {{this.d_five}}</h3>
+        <a class="ment_buttons"href="../respoke/VideoChat.html">
+            <button class="contact_respoke" id="call">Video Call</button>
+        </a>
+        <a class="ment_buttons" href="../respoke/IM.html">
+            <button class="contact_respoke" id="text">Chat</button>
+        </a>
+    </div>
+{{/each}} --}}
+
+{{#each Mentor}}
+<a href="./profile.handlebars" class="ment_display">
+    <div class="ment_all" id="mentor_" + {{this.id}}>
+        <section class="pic_on_left">
+            <div class="ment_pic round photo spc-sm-s">
+                <img src="ask andrew how to get image source">
+                <h4>Offering mentorship in:</h2>
+                <h5>{{this.d_one}} <br>
+                    {{this.d_two}} <br>
+                    {{this.d_three}} <br>
+                    {{this.d_four}} <br>
+                    {{this.d_five}}</h3>
+            </div>
+        </section>
+        <section class="info_in_mid">
+            <h4 class="names">{{this.first_name}} {{this.last_name}}</h5>
+                <p class="ment_bio">{{this.bio}}
+                    <span class="read_more">read more</span>
+                </p>
+        </section>
+        <section class="buttons_on_right">
+            <a class="ment_buttons" href="../respoke/VideoChat.html">
+                <button class="contact_respoke" id="call">Video Call</button>
+            </a>
+            <a class="ment_buttons" href="../respoke/IM.html">
+                <button class="contact_respoke" id="text">Chat</button>
+            </a>
+
+        </section>
+    </div>
+</a>
+
+{{/each}}

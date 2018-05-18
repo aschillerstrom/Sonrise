@@ -7,6 +7,8 @@
     <script src="https://cdn.respoke.io/respoke.min.js"></script>
 
     <!-- jQuery, for this example -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="style/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     
    
@@ -14,6 +16,9 @@
 </head>
 
 <body>
+        
+
+
     <h3 id="status">Not Connected</h3>
     <div id="login">
         <input id="endpoint" placeholder="Username" type="text" />
@@ -69,9 +74,12 @@
             endpoint.sendMessage({
                 message: messageText
             });
+            //give name to message
+
             // Show yourself the message
             $("#messages").append(
-                "<li>" + messageText + "</li>"
+                
+                "<li>" + endpointId + messageText + "</li>"
             );
             // Clear the text you just sent
             $("#textToSend").val('');
