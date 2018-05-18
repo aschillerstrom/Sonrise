@@ -113,3 +113,10 @@ float:right;
 footer.page-footer {
   margin: 0;
 }
+.modalbuttons1 {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+  width: 40%;
+
+}
