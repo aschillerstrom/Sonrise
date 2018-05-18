@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Mentee Page</title>
+  <title>Home Page</title>
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -12,14 +12,15 @@
   <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase.js"></script>
 </head>
 <body>
-  <nav class="brown" role="navigation">
+  <nav class="white" role="navigation">
     <div class="nav-wrapper container">
       <a id="logo-container" href="index.html" class="brand-logo">SonRise</a>
+
       <ul class="right hide-on-med-and-down">
           <li><a href="profile.html">Profile</a></li>
           <li><a href="mentor.html">Mentor</a></li>
           <li><a href="mentee.html">Mentee</a></li>
-          <li><a class="brown-text waves-effect waves-light btn-small" id="logout">Log out</a></li>
+         <!-- <li><a class="brown-text waves-effect waves-light btn-small">Log in</a></li> -->
       </ul>
 
       <ul id="nav-mobile" class="sidenav">
@@ -32,19 +33,15 @@
     </div>
   </nav>
 
-
   <div id="index-banner" class="parallax-container">
     <div class="section no-pad-bot">
       <div class="container">
         <br><br>
         <h1 class="header center teal-text text-lighten-2">SonRise</h1><br><br>
         <div class="row center">
-          <h5 class="sonrise header col s12 light">Get Started Today and Acheive Your Goals with the Help of a Mentor</h5>
+          <h5 class="sonrise header col s12 light">Please Answer the Questions Below</h5>
         </div>
-        <div class="row center">
-          <a href="#" id="download-button" class="btn-small waves-effect waves-light teal lighten-1">Get Started</a>
-        </div>
-        <br><br>
+        
 
       </div>
     </div>
@@ -53,47 +50,45 @@
 
   <div class="container">
     <div class="section">
-
-    <!--   Icon Section   -->
-      <div class="row">
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center brown-text"> <i class="material-icons">flash_on</i></h2>
-            <h5 class="center"><a href="development.html" class=" brown-text waves-effect waves-light btn-large">Development</a></h5>
-
-            <p class="center-text light">Develop goals for your future.</p>
-          </div>
-        </div>
-
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">group</i></h2>
-            <h5 class="center"><a class=" brown-text waves-effect waves-light btn-large">Connection</a></h5>
-
-            <p class="light">Meet your new mentor today.</p>
-          </div>
-        </div>
-
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">build</i></h2>
-           <h5 class="center"><a href="resources.html" class=" brown-text waves-effect waves-light btn-large">Resources</a></h5>
-
-            <p class="light">Tools to acheive your goals.</p>
-          </div>
-        </div>
-      </div>
+        
+            <form action="#">
+                    <p>
+                      <label>
+                          <h6>Would you like to be a mentor or mentee?(required)</h6>
+                        <input value=true  name="group1" type="radio" checked />
+                        <span>Mentor</span>
+                      </label>
+                    
+                      <label>
+                            <input value=false  name="group1" type="radio" />
+                            <span>Mentee</span>
+                      </label>
+                    </p>
+                    
+                  </form>
+  
 
     </div>
   </div>
-  <footer class="page-footer brown">
+  <footer class="page-footer teal">
     <div class="container">
       <div class="row">
         <div class="col l9 s12">
           <h5 class="white-text">Company Bio</h5>
-          <p class="grey-text text-lighten-4">We are a team of developer students working on this project like it's our full time job.  Please support our mission</p>
-        </div>
+          <p class="grey-text text-lighten-4">We are a team of developer students working on this project like it's our full time job. 
+            Please support our mission</p>
 
+
+        </div>
+        <!-- <div class="col l3 s12">
+          <h5 class="white-text">Settings</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div> -->
         <div class="col l3 s12">
           <h5 class="white-text">Our Team</h5>
           <ul>
