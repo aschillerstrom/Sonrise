@@ -1,5 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
     var Mentor = sequelize.define("Mentor", {
+        //consider making fn/ln a user id thing
         first_name: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -22,6 +23,10 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.TEXT,
             allowNull: true
         },
+        available: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false
+        },
         dOne: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -33,7 +38,7 @@ module.exports = function(sequelize, DataTypes) {
         },
         dOneSpecific: {
             type: DataTypes.TEXT,
-            allowNull: true,
+            allowNull: false,
         },
         dTwo: {
             type: DataTypes.STRING,

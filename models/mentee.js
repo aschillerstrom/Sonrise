@@ -18,6 +18,10 @@ modeule.exports = function(sequelize, DataTypes) {
                 isAlpha: true,
             }
         },
+        available: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false
+        }
         bio: {
             type: DataTypes.TEXT,
             allowNull: true
