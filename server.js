@@ -27,13 +27,13 @@ app.set('view engine', 'handlebars');
 app.use(express.static("public"));
 
 // Routes
-var menteeRoutes = require('./routes/mentee_routes');
-var mentorRoutes = require("./routes/mentor_routes");
-var htmlRoutes = require('./routes/html_routes');
+  var menteeRoutes = require('./routes/mentee_routes');
+  var mentorRoutes = require("./routes/mentor_routes");
+  var htmlRoutes = require('./routes/html_routes');
 
-menteeRoutes(app);
-mentorRoutes(app);
-htmlRoutes(app); 
+  menteeRoutes(app);
+  mentorRoutes(app);
+  htmlRoutes(app); 
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================

@@ -1,24 +1,21 @@
-{{> test}}
 {{#each Mentee}}
 
-<a href= "/profile/{{this.id}}" <!--(i think this is correct, but should ask TA) --> class="ment_display">
-    <div class="ment_all row" id="mentee_" + {{this.id}}>
+<a href= "/mentees/profile/{{this.id}}" class="ment_display">
+    <div class="ment_all row" id="mentee_{{this.id}}">
         <section class="pic_on_left col s3">
             <div class="ment_pic round photo spc-sm-s">
                 <img src="ask andrew how to get image source">
-                <h4>Seeking mentorship in:</h2>
+                <h4>Seeking mentorship in:</h4>
                 <h5>{{this.d_one}} <br>
                     {{this.d_two}} <br>
                     {{this.d_three}} <br>
                     {{this.d_four}} <br>
-                    {{this.d_five}}</h3>
+                    {{this.d_five}}</h5>
             </div>
         </section>
         <section class="info_in_mid col s5">
-            <h4 class="names">{{this.first_name}} {{this.last_name}}</h5>
-                <p class="ment_bio">{{this.bio}}
-                    <span class="read_more">read more</span>
-                </p>
+            <h4 class="names">{{this.first_name}} {{this.last_name}}</h4>
+                <p class="ment_bio">{{this.bio}} </p>
         </section>
         <section class="buttons_on_right col s4">
             <a class="ment_buttons" href="../respoke/VideoChat.html">

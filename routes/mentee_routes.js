@@ -7,19 +7,19 @@ module.exports = function(app) {
     //find all mentees
     app.get("/mentees", function(req, res){
         Mentee.findAll({}).then(function(dbMentee){
-            console.log(dbMentee);
-            return res.render('test', dbMentee)
+            //console.log(dbMentee);
+            return res.render('frame_mentees', {Mentee: dbMentee})
         })
     });
 
     //find a specific mentee
-    app.get("/mentees/:id", function(req, res){
+    app.get("/mentees/id/:id", function(req, res){
         Mentee.findAll({
             where: {
                 id: req.params.id
             }
         }).then(function(dbMentee){
-            return res.render('mentees', dbMentee)
+            return res.render('frame_mentees', {Mentee: dbMentee})
         });
     });
 
@@ -29,7 +29,7 @@ module.exports = function(app) {
                 online: true
             }
         }).then(function(dbMentee) {
-            return res.render('mentees', dbMentee)
+            return res.render('frame_mentees', {Mentee: dbMentee})
         });
     });
 
@@ -40,16 +40,30 @@ module.exports = function(app) {
                 d_one: req.params.d_one
             }
         }).then(function(dbMentee){
-            return res.render('mentees_d_one', dbMentee)
+            return res.render('frame_mentees', {Mentee: dbMentee})
+        });
+    });
+
+    app.get("/mentees/profile/:id", function(req, res){
+        Mentee.findOne({
+            where: {
+                id: req.params.id
+            }
+        }).then(function(dbMentee){
+            return res.render('profile', {Person: dbMentee, isMentor: false})
         });
     });
 
     //adding new mentee
-    app.post("api/mentees", function(req, res) {
+    app.post("/api/mentees", function(req, res) {
+        console.log("post mentee");
         var newMentee = req.body;
         Mentee.create({
             first_name: newMentee.first_name,
             last_name: newMentee.last_name,
+            birthday: newMentee.birthday,
+            zip_code: newMentee.zip_code,
+            online: newMentee.online,
             bio: newMentee.bio,
             d_one: newMentee.d_one,
             d_oneData: newMentee.d_oneData,
@@ -67,22 +81,25 @@ module.exports = function(app) {
     });
 
     //updating mentees
-    app.put("api/mentees", function(req, res){
+    app.put("/api/mentees", function(req, res){
         var updateMentee = req.body;
         Mentee.update({
-            first_name: newMentee.first_name,
-            last_name: newMentee.last_name,
-            bio: newMentee.bio,
-            d_one: newMentee.d_one,
-            d_oneData: newMentee.d_oneData,
-            d_two: newMentee.d_two,
-            d_twoData: newMentee.d_twoData,
-            d_three: newMentee.d_three,
-            dT_threeData: newMentee.d_threeData,
-            d_four: newMentee.d_four,
-            d_fourData: newMentee.df_fourData,
-            d_five: newMentee.d_five,
-            d_fiveData: newMentee.d_fiveData,
+            first_name: updateMentee.first_name,
+            last_name: updateMentee.last_name,
+            bio: updateMentee.bio,
+            birthday: updateMentee.birthday,
+            zip_code: updateMentee.zip_code,
+            online: updateMentee.online,
+            d_one: updateMentee.d_one,
+            d_oneData: updateMentee.d_oneData,
+            d_two: updateMentee.d_two,
+            d_twoData: updateMentee.d_twoData,
+            d_three: updateMentee.d_three,
+            dT_threeData: updateMentee.d_threeData,
+            d_four: updateMentee.d_four,
+            d_fourData: updateMentee.df_fourData,
+            d_five: updateMentee.d_five,
+            d_fiveData: updateMentee.d_fiveData,
         },{
             where: {
                 id: updateMentee.id
@@ -93,7 +110,7 @@ module.exports = function(app) {
     });
 
     //deleting mentees
-    app.delete("api/mentees/:id", function(res, req) {
+    app.delete("/api/mentees/:id", function(res, req) {
         Mentee.destroy({
             where: {
                 id: req.params.id
@@ -101,6 +118,6 @@ module.exports = function(app) {
         }).then(function(dbMentee) {
             res.json(dbMentee);
         });
-    })
+    });
 
 }
