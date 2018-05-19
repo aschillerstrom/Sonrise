@@ -1,3 +1,4 @@
+var db = require("../models");
 var Mentee = db.Mentee;
 
 // mentee routes
@@ -6,39 +7,40 @@ module.exports = function(app) {
     //find all mentees
     app.get("/mentees", function(req, res){
         Mentee.findAll({}).then(function(dbMentee){
-            return res.render('mentees', dbMentee)
+            console.log(dbMentee);
+            return res.render('test', dbMentee)
         })
     });
 
     //find a specific mentee
-    app.get("/mentee/:id", function(req, res){
+    app.get("/mentees/:id", function(req, res){
         Mentee.findAll({
             where: {
                 id: req.params.id
             }
         }).then(function(dbMentee){
-            return res.render('mentee', dbMentee)
-        })
+            return res.render('mentees', dbMentee)
+        });
     });
 
-    app.get("/mentees/:online", function(req, res) {
+    app.get("/mentees/online", function(req, res) {
         Mentee.findAll({
             where: {
-                online :true
+                online: true
             }
         }).then(function(dbMentee) {
-            return res.render('mentee_online', dbMentee)
+            return res.render('mentees', dbMentee)
         });
     });
 
     //find all mentees of specific dimension
-    app.get("/mentees/:dOne", function(req, res){
+    app.get("/mentees/dimensions/:d_one", function(req, res){
         Mentee.findAll({
             where: {
                 d_one: req.params.d_one
             }
         }).then(function(dbMentee){
-            return res.render('mentees_dOne', dbMentee)
+            return res.render('mentees_d_one', dbMentee)
         });
     });
 
@@ -65,7 +67,7 @@ module.exports = function(app) {
     });
 
     //updating mentees
-    app.update("api/mentees", function(req, res){
+    app.put("api/mentees", function(req, res){
         var updateMentee = req.body;
         Mentee.update({
             first_name: newMentee.first_name,

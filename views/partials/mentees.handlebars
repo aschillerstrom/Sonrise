@@ -1,24 +1,9 @@
-{{!-- {{#each Mentee}}
-<div class="ment_all" id="mentee_" + {{this.id}}>
-    <img src="#" alt="#" class="mentee_img">
-    <span class="ment_names">{{this.first_name}} {{this.last_name}}</span>
-    <p>{{this.bio}}</p>
-    <h2>Seeking mentorship in:</h2>
-    <h3>{{this.d_one}} {{this.d_two}} {{this.d_three}} {{this.d_four}} {{this.d_five}}</h3>
-    <a class="ment_buttons" href="../respoke/VideoChat.html">
-        <button class="contact_respoke" id="call">Video Call</button>
-    </a>
-    <a class="ment_buttons" href="../respoke/IM.html">
-        <button class="contact_respoke" id="text">Chat</button>
-    </a>
-</div>
-{{/each}}  --}}
-
+{{> test}}
 {{#each Mentee}}
 
-<a href="./profile.handlebars <!--(i think this is correct, but should ask TA) -->" class="ment_display">
-    <div class="ment_all" id="mentee_" + {{this.id}}>
-        <section class="pic_on_left">
+<a href= "/profile/{{this.id}}" <!--(i think this is correct, but should ask TA) --> class="ment_display">
+    <div class="ment_all row" id="mentee_" + {{this.id}}>
+        <section class="pic_on_left col s3">
             <div class="ment_pic round photo spc-sm-s">
                 <img src="ask andrew how to get image source">
                 <h4>Seeking mentorship in:</h2>
@@ -29,13 +14,13 @@
                     {{this.d_five}}</h3>
             </div>
         </section>
-        <section class="info_in_mid">
+        <section class="info_in_mid col s5">
             <h4 class="names">{{this.first_name}} {{this.last_name}}</h5>
                 <p class="ment_bio">{{this.bio}}
                     <span class="read_more">read more</span>
                 </p>
         </section>
-        <section class="buttons_on_right">
+        <section class="buttons_on_right col s4">
             <a class="ment_buttons" href="../respoke/VideoChat.html">
                 <button class="contact_respoke" id="call">Video Call</button>
             </a>
