@@ -6,30 +6,67 @@
     <!-- Respoke client library -->
     <script src="https://cdn.respoke.io/respoke.min.js"></script>
 
-    <!-- jQuery, for this example -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <!--jquery-->     
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css"></style>
     </style>
 </head>
 
 <body>
+
+        <nav class="white" role="navigation">
+                <div class="nav-wrapper container">
+                  <a id="logo-container" href="index.html" class="brand-logo">SonRise</a>
+            
+                  <ul class="right hide-on-med-and-down">
+                      <li><a href="profile.html">Profile</a></li>
+                      <li><a href="mentor.html">Mentor</a></li>
+                      <li><a href="mentee.html">Mentee</a></li>
+                     <!-- <li><a class="brown-text waves-effect waves-light btn-small">Log in</a></li> -->
+                  </ul>
+            
+                  <ul id="nav-mobile" class="sidenav">
+                     <li><a href="profile.html">Profile</a></li>
+                      <li><a href="mentor.html">Mentor</a></li>
+                      <li><a href="mentee.html">Mentee</a></li>
+                      <li><a class="brown-text waves-effect waves-light btn-small">Log out</a></li>
+                  </ul>
+                  <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                </div>
+              </nav>
+            
+              <div id="index-banner" class="parallax-container">
+                <div class="section no-pad-bot">
+                  <div class="container">
+                    <br><br>
+                    <h1 class="header center teal-text text-lighten-2">SonRise</h1><br><br>
+                    <h2  class="header center teal-text text-lighten-2">Let's group chat</h2>                             
+                  </div>
+                </div>
+              </div>
+            
+<div class = "container">
     <h3 id="status">Not Connected</h3>
-    <h3 id="groupStatus">Not Connected to Group</h3>
+    <h3 id="groupStatus"></h3>
     <div id="login">
         <input id="endpoint" placeholder="Username" type="text" />
         <button id="doLogin">Connect</button>
     </div>
 
     <div id="messaging">
-        <ul id="messages"></ul>
         <br />
         <textarea id="groupMsg" placeholder="Message to Send" rows="4"></textarea>
         <br/>
         <button id='sendMessage'>Message Group</button>
         <button id='leaveGroup'>Leave Group</button>
+        <ul id="messages"></ul>
     </div>
-
+</div>
 
     <script type="text/javascript">
     
@@ -65,7 +102,7 @@
     client.listen('connect', function() {
         $("#status").html("Connected via SonRise as \"" + endpointId + "\"");
         // Update group status message
-        $('#groupStatus').html('Joining focue group: ' + groupId);
+        $('#groupStatus').html('Joining focus group: ' + groupId);
         // Automatically join the group once connected
         client.join({
             id: groupId,
@@ -91,7 +128,7 @@
         });
         // Show yourself the message
         $("#messages").append(
-            "<li>" + groupMsg + "</li>"
+            "<li>" + endpointId + ": " + groupMsg + "</li>"
         );
         // Clear the message input
         $("#groupMsg").val('');
