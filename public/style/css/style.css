@@ -1,6 +1,10 @@
 /* Custom Stylesheet */
-
-
+/* #index-banner{
+  margin-bottom: 10%
+}
+.card .card-content{
+  margin: 10%;
+} */
 h5{
   color:aliceblue;
   text-align: center;
@@ -12,7 +16,7 @@ h5{
 nav ul a,
 nav .brand-logo, nav{
   color: #444;
-  text-align: center;
+  text-align: left;
 }
 h1{
   color: #444;
@@ -57,11 +61,11 @@ float:right;
   width: 50%;
   height: 100%;
 
-  /* Set up positioning */
-  /*position: fixed;
+  /* Set up positioning
+  position: fixed;
   top: 0;
   left: 0;
-  
+   */
   /* color: rgba(255, 255, 255, .9); */
 }
 
@@ -81,7 +85,18 @@ float:right;
   
   /* color: rgba(255, 255, 255, .9); */
 }
-
+#profile-image1{
+  float:center;
+}
+.img-circle, img-responsive{
+height:25%;
+width:25%;
+}
+.square{
+  height:10%;
+  width:10%;
+  float: left;
+}
 .parallax-container .section {
   width: 100%;
 
@@ -125,4 +140,18 @@ footer.page-footer {
 }
 #txtPassword {
   color: white;
+}
+.img-circle {
+  float: left;
+  margin-left: 15%;
+}
+h4{
+  margin-left: 15%;
+}
+
+form{
+  margin-left: 15%;
+}
+.input{
+  margin-left: 15%;
 }
