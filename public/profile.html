@@ -8,6 +8,7 @@
 
     <!-- CSS  -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<<<<<<< HEAD
     <link href="style/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
     <link href="style/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
 
@@ -16,6 +17,17 @@
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase.js"></script>
     <!------ Include the above in your HEAD tag ---------->
+=======
+    <link href="style/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="style/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+ 
+  <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase.js"></script>
+
+  <!------ Include the above in your HEAD tag ---------->
+>>>>>>> 3481637c37636f330c11df0a4ce48c8168663a66
 
     <title>Profile Page</title>
 
@@ -23,6 +35,7 @@
 </head>
 
 <body>
+<<<<<<< HEAD
     <nav class="teal" role="navigation">
         <div class="nav-wrapper container">
             <a id="logo-container" href="index.html" class="brand-logo">SonRise</a>
@@ -263,6 +276,210 @@
 
                                     <script src="profile.js"></script>
                                     <script src="login.js" type="text/javascript"></script>
+=======
+  <nav class="teal" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="index.html" class="brand-logo">SonRise</a>
+      <ul class="right hide-on-med-and-down">
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="mentor.html">Mentor</a></li>
+          <li><a href="mentee.html">Mentee</a></li>
+          <li><a class="brown-text waves-effect waves-light btn-small" id="logout">Log out</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+         <li><a href="profile.html">Profile</a></li>
+          <li><a href="mentor.html">Mentor</a></li>
+          <li><a href="mentee.html">Mentee</a></li>
+          <li><a class="brown-text waves-effect waves-light btn-small" id="logout">Log out</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+<div class="container">
+	<div class="row">
+   <div class="col-lg-12">
+
+  <div class="panel panel-default">
+  <div class="panel-heading">  <h4 >User Profile</h4></div>
+   <div class="panel-body">
+       
+    <div class="box box-info">
+        
+            <div class="box-body">
+                     <div class="col-md-3">
+                     <div  align="center"> <img alt="User Pic" src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" id="profile-image1" class="img-circle img-responsive"> 
+                
+                <input id="profile-image-upload" class="hidden" type="file">
+<div style="color:#999;" >click here to change profile image</div>
+                <!--Upload Image Js And Css-->
+           
+                     </div>
+              
+                    <div class="container">
+  
+                      <div class="row">
+              
+                          <div class="col-sm-3">
+                              <ul class="nav nav-pills nav-stacked admin-menu" >
+                                  <li class="active"><a href="" data-target-id="profile"><i class="glyphicon glyphicon-user"></i> Profile</a></li>
+                                  <li><a href="" data-target-id="change-password"><i class="glyphicon glyphicon-lock"></i> Change Password</a></li>
+                                  <li><a href="" data-target-id="settings"><i class="glyphicon glyphicon-cog"></i> Settings</a></li>
+                                  <li><a href="" data-target-id="logout" id="logout"><i class="glyphicon glyphicon-log-out" id="logout"></i> Logout</a></li>
+                              </ul>
+                          </div>
+              
+                          <div class="col-md-8  admin-content" id="profile">
+                              <div class="panel panel-info" style="margin: 1em;">
+                                  <div class="panel-heading">
+                                      <h3 class="panel-title">Name</h3>
+                                  </div>
+                                  <div class="panel-body">
+                                      Ashish Patel
+                                  </div>
+                              </div>
+                              <div class="panel panel-info" style="margin: 1em;">
+                                  <div class="panel-heading">
+                                      <h3 class="panel-title">Bio</h3>
+                                  </div>
+                                  <div class="panel-body">
+                                      likes to be helpful
+                                  </div>
+                              </div>
+                              <div class="panel panel-info" style="margin: 1em;">
+                                  <div class="panel-heading">
+                                      <h3 class="panel-title">Interests</h3>
+                                  </div>
+                                  <div class="panel-body">
+                                     everything funny
+                                  </div>
+                              </div>
+                              <div class="panel panel-info" style="margin: 1em;">
+                                  <div class="panel-heading">
+                                      <h3 class="panel-title">Email</h3>
+                                  </div>
+                                  <div class="panel-body">
+                                      ashishpatel0720@gmail.com
+                                  </div>
+                              </div>
+                              <div class="panel panel-info" style="margin: 1em;">
+                                  <div class="panel-heading">
+                                      <h3 class="panel-title">Last Password Change</h3>
+              
+                                  </div>
+                                  <div class="panel-body">
+                                      4 days Ago
+                                  </div>
+                              </div>
+              
+                          </div>
+                 <div class="col-md-9  admin-content" id="settings">
+                              <div class="panel panel-info" style="margin: 1em;">
+                                  <div class="panel-heading">
+                                      <h3 class="panel-title">Notification</h3>
+                                  </div>
+                                  <div class="panel-body">
+                                      <div class="label label-success">allowed</div>
+                                  </div>
+                              </div>
+                              <div class="panel panel-info" style="margin: 1em;">
+                                  <div class="panel-heading">
+                                      <h3 class="panel-title">Newsletter</h3>
+                                  </div>
+                                  <div class="panel-body">
+                                      <div class="badge">Monthly</div>
+                                  </div>
+                              </div>
+                              <div class="panel panel-info" style="margin: 1em;">
+                                  <div class="panel-heading">
+                                      <h3 class="panel-title">Admin</h3>
+              
+                                  </div>
+                                  <div class="panel-body">
+                                       <div class="label label-success">yes</div>
+                                  </div>
+                              </div>
+              
+                          </div>
+              
+                          <div class="col-md-9  admin-content" id="change-password">
+                              <form action="/password" method="post">
+              
+                         
+                                  <div class="panel panel-info" style="margin: 1em;">
+                                      <div class="panel-heading">
+                                          <h3 class="panel-title"><label for="new_password" class="control-label panel-title">New Password</label></h3>
+                                      </div>
+                                      <div class="panel-body">
+                                          <div class="form-group">
+                                              <div class="col-sm-10">
+                                                  <input type="password" class="form-control" name="password" id="new_password" >
+                                              </div>
+                                          </div>
+              
+                                      </div>
+                                  </div>
+              
+                           
+                                  <div class="panel panel-info" style="margin: 1em;">
+                                      <div class="panel-heading">
+                                          <h3 class="panel-title"><label for="confirm_password" class="control-label panel-title">Confirm password</label></h3>
+                                      </div>
+                                      <div class="panel-body">
+                                          <div class="form-group">
+                                              <div class="col-sm-10">
+                                                  <input type="password" class="form-control" name="password_confirmation" id="confirm_password" >
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+              
+                         
+                                  <div class="panel panel-info border" style="margin: 1em;">
+                                      <div class="panel-body">
+                                          <div class="form-group">
+                                              <div class="pull-left">
+                                                  <input type="submit" class="form-control btn btn-primary" name="submit" id="submit">
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+              
+                              </form>
+                          </div>
+              
+                          <div class="col-md-9  admin-content" id="settings"></div>
+              
+                          <div class="col-md-9  admin-content" >
+                              <div class="panel panel-info" style="margin: 1em;">
+                                  <div class="panel-heading">
+                                      <h3 class="panel-title">Confirm Logout</h3>
+                                  </div>
+                                  <div class="panel-body">
+                                      Do you really want to logout ?  
+                                      <a  href="#" class="label label-danger"
+                                          onclick="event.preventDefault();
+                                                                   document.getElementById('logout-form').submit();">
+                                                                   
+                                          <span >   Yes   </span>
+                                      </a>    
+                                      <a href="/account" class="label label-success"> <span >  No   </span></a>
+                                  </div>
+                                  <form id="logout-form" action="#" method="POST" style="display: none;">
+                                  </form>
+              
+              
+              
+                              </div>
+                          </div>
+                      </div>
+              </div>
+
+
+<script src="profile.js"></script> 
+<script src="login.js" type="text/javascript"></script> 
+>>>>>>> 3481637c37636f330c11df0a4ce48c8168663a66
 </body>
 
 </html>

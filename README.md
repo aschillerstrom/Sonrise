@@ -10,7 +10,7 @@ To run this application you will require node and an npm install to load the nec
 
 Applicaion Layout
 
-	Sign in Form: First Register or Login
+•	Sign in: First Register or Login
 •	Register: Username password and email then kick to After sign in page
 •	After sign in: 
 •   Questionnaire: 5 dimentions, zip code
@@ -19,8 +19,9 @@ o	Module Mentor or Mentee?
 •	Resources
 •	Connection
 •   Development
-o	Meet ups via respoke
-•	Meet up opportunities page
+•  	Meet Up via Video Chat
+•   Instant Messenger
+
 
 Installing?
 
