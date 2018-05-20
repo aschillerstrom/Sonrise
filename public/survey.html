@@ -51,16 +51,16 @@
   <div class="container">
     <div class="section">
         
-            <form action="#">
+            <form action="#" id="survey">
                     <p>
                             <label>
                         <p id="firstlabel">Are you interested in becoming a mentor or mentee?</p>
-                              <input name="group1" type="radio" value=true checked />
+                              <input name="group1" type="radio" id="ment" value=true checked />
                               <span>Mentor</span>
                             </label>
                           
                             <label>
-                              <input class="with-gap" name="group1" type="radio" value=false />
+                              <input class="with-gap" name="group1" id="ment" type="radio" value=false />
                               <span>Mentee</span>
                             </label>
                           </p>
@@ -83,7 +83,7 @@
                             <div class="file-field input-field">
                                 <div class="btn">
                                   <span>Upload a profile picture</span>
-                                  <input type="file">
+                                  <input id="picture" type="file">
                                 </div>
                                 <div class="file-path-wrapper">
                                   <input class="file-path validate" type="text">
@@ -109,7 +109,7 @@
                                     </div>
                                   </div>
                             <label>What are you interested in?(required)</label>
-                            <select class="browser-default">
+                            <select class="browser-default" id="d1">
                               <option value="" disabled selected>Choose your option</option>
                               <option value="1">Physical</option>
                               <option value="2">Spiritual</option>
@@ -118,7 +118,7 @@
                               <option value="5">Personal</option>
                             </select>
                             <label>What else are you interested in?</label>
-                            <select class="browser-default">
+                            <select class="browser-default" id="d2">
                               <option value="" disabled selected>Choose your option</option>
                               <option value="1">Physical</option>
                               <option value="2">Spiritual</option>
