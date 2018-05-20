@@ -1,7 +1,12 @@
+html {
+    background-color: white;
+}
+
+
 body {
     font-family: Arial, Helvetica;
-    margin-left: 25px;
-    background-color: #26a69a;
+    color: #444;
+    background-color: white;
 }
 
 #messages {
@@ -12,6 +17,7 @@ body {
     overflow-y: auto;
     padding: 5px;
     background-color: white;
+    color: #444
 }
 
 #textToSend {
@@ -50,3 +56,138 @@ video {
     float: left;
 }
 
+/* Custom Stylesheet */
+
+
+h5{
+    color:aliceblue;
+    text-align: center;
+  }
+  .sonrise{
+      margin-top: -4%;
+      margin-bottom: 2%
+    }
+  nav ul a,
+  nav .brand-logo {
+    color: #444;
+    text-align: center;
+  }
+  h1{
+    color: #444;
+  }
+  .white-text{
+    text-align: color;
+  }
+  p {
+    line-height: 2rem;
+    text-align: center;
+  }
+  li{
+    text-align:center;
+  }
+  #download-button{
+  margin: 1%;
+  }
+  .btn-large{
+    background-color: white;
+  }
+  .btn-small{
+    background-color: white;
+  }
+  .sidenav-trigger {
+    color: #26a69a;
+  }
+
+  #status, #doLogin, #sendMessage, #leaveGroup, #groupStatus, #doCall, #doHangUp {
+      color: #26a69a;
+  }
+
+
+  waves-effect waves-light btn-small {
+  float:right;
+  }
+  .parallax {
+    /* Set rules to fill background */
+    background: url("https://s9.postimg.cc/4rfce0zf3/yosemitesunrise.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    text-align: center;
+    min-height: 100%;
+    min-width: 100%;
+  
+    /* Set up proportionate scaling */
+    width: 50%;
+    height: 100%;
+  
+    /* Set up positioning */
+    /*position: fixed;
+    top: 0;
+    left: 0;
+    
+    /* color: rgba(255, 255, 255, .9); */
+  }
+  
+  .parallaxtwo {
+    /* Set rules to fill background */
+    background: url("https://s9.postimg.cc/4rfce0zf3/yosemitesunrise.jpg");
+    background-size: 100%;
+    min-height: 100%;
+    min-width: 100%;
+    /* Set up proportionate scaling */
+    width: 100%;
+    height: 100%;
+    /* Set up positioning */
+    /*position: fixed;
+    top: 0;
+    left: 0;
+    
+    /* color: rgba(255, 255, 255, .9); */
+  }
+  
+  .parallax-container{
+    width: 100%;
+    height: 25%;
+    background: url("https://s9.postimg.cc/m16dpyvlr/austin_Sunrise.jpg");
+    background-size: cover;
+  
+  }
+
+
+
+  @media only screen and (max-width: 992px) {
+    .parallax-container .section {
+      position: absolute;
+      top: 40%;
+    }
+    #index-banner .section {
+      top: 10%;
+    }
+  }
+  
+  @media only screen and (max-width: 600px) {
+    #index-banner .section {
+      top: 0;
+    }
+  }
+  
+  .icon-block {
+    padding: 0 15px;
+  }
+  
+  .icon-block .material-icons {
+    font-size: inherit;
+  }
+  
+  footer.page-footer {
+    margin: 0;
+  }
+  .modalbuttons1 {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    width: 40%;
+  
+  }
+  
