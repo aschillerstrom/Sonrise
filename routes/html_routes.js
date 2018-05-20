@@ -31,3 +31,7 @@ module.exports = function(app) {
   });
 
 };
+
+app.get("/main", function (req, res) {
+  res.sendFile(path.join(_dirname, "../views/main.handlebars"));
+});
