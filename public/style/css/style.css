@@ -17,6 +17,7 @@ nav ul a,
 nav .brand-logo, nav{
   color: #444;
   text-align: left;
+
 }
 h1{
   color: #444;
@@ -156,5 +157,11 @@ form{
   text-align: left;
 }
 footer {
-position: sticky;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  text-align: center;
+  min-height: 100%;
+  min-width: 100%;
 }
