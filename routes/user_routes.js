@@ -31,8 +31,8 @@ module.exports = function(app) {
     app.post("api/users", function(req, res) {
         var newUser = req.body;
         User.create({
-            first_name = newUser.first_name,
-            last_name = newUser.last_name,
+            first_name : newUser.first_name,
+            last_name : newUser.last_name,
             email: newUser.email,
             //mentor: newUser.mentor,
             birthDay: newUser.birthDay,
