@@ -1,18 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Son Rise Login</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Home Page</title>
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="style/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
-  <link href="style/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="style/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="style/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase.js"></script>
-
 </head>
+<body>
+  <nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="index.html" class="brand-logo">SonRise</a>
+
+      <ul class="right hide-on-med-and-down">
+          <li><a href="m_profile.html">Profile</a></li>
+          <!-- <li><a href="mentor.html">Mentor</a></li> -->
+          <!-- <li><a href="mentee.html">Mentee</a></li> -->
+         <!--<li><a class="brown-text waves-effect waves-light btn-small">Log in</a></li> -->
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+         <li><a href="m_profile.html">Profile</a></li>
+          <!-- <li><a href="mentor.html">Mentor</a></li>
+          <li><a href="mentee.html">Mentee</a></li> -->
+         <!-- <li><a class="brown-text waves-effect waves-light btn-small" id="logout">Log out</a></li> -->
+      </ul>
+
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
 
 <body>
   <div id="index-banner" class="parallax-container">
