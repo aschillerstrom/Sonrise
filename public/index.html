@@ -9,25 +9,28 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="style/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="style/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase.js"></script>
 </head>
 <body>
-  <nav class="white" role="navigation">
+  <nav class="teal" role="navigation">
     <div class="nav-wrapper container">
       <a id="logo-container" href="index.html" class="brand-logo">SonRise</a>
 
       <ul class="right hide-on-med-and-down">
-          <li><a href="#">Profile</a></li>
-          <li><a href="mentor.html">Mentor</a></li>
-          <li><a href="mentee.html">Mentee</a></li>
-          <li><a class="brown-text waves-effect waves-light btn-small">Log in</a></li>
+          <!-- <li><a href="m_profile.html">Profile</a></li> -->
+          <!-- <li><a href="mentor.html">Mentor</a></li>
+          <li><a href="mentee.html">Mentee</a></li> -->
+         <!--<li><a class="brown-text waves-effect waves-light btn-small">Log in</a></li> -->
       </ul>
 
       <ul id="nav-mobile" class="sidenav">
-         <li><a href="index.html">Profile</a></li>
-          <li><a href="mentor.html">Mentor</a></li>
-          <li><a href="mentee.html">Mentee</a></li>
-          <li><a class="brown-text waves-effect waves-light btn-small">Log out</a></li>
+         <!-- <li><a href="m_profile.html">Profile</a></li> -->
+          <!-- <li><a href="mentor.html">Mentor</a></li>
+          <li><a href="mentee.html">Mentee</a></li> -->
+         <!-- <li><a class="brown-text waves-effect waves-light btn-small" id="logout">Log out</a></li> -->
       </ul>
+
       <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
   </nav>
@@ -41,7 +44,7 @@
           <h5 class="sonrise header col s12 light">Get Started Today and Acheive Your Goals with the Help of a Mentor</h5>
         </div>
         <div class="row center">
-          <a href="#" id="download-button" class="btn-small waves-effect waves-light teal lighten-1">Get Started</a>
+          <a href="login.html" id="download-button" class="btn-small waves-effect waves-light teal lighten-1">Get Started</a>
         </div>
         <br><br>
 
@@ -58,7 +61,7 @@
         <div class="col s12 m4">
           <div class="icon-block">
             <h2 class="center brown-text"> <i class="material-icons">flash_on</i></h2>
-            <h5 class="center"><a class=" brown-text waves-effect waves-light btn-large">Development</a></h5>
+            <h5 class="center"><a href="development.html" class=" brown-text waves-effect waves-light btn-large">Development</a></h5>
 
             <p class="light">Develop goals for your future.</p>
           </div>
@@ -67,7 +70,7 @@
         <div class="col s12 m4">
           <div class="icon-block">
             <h2 class="center brown-text"><i class="material-icons">group</i></h2>
-            <h5 class="center"><a class=" brown-text waves-effect waves-light btn-large">Connection</a></h5>
+            <h5 class="center"><a href="connection.html" class=" brown-text waves-effect waves-light btn-large">Connection</a></h5>
 
             <p class="light">Meet your new mentor today.</p>
           </div>
@@ -76,7 +79,7 @@
         <div class="col s12 m4">
           <div class="icon-block">
             <h2 class="center brown-text"><i class="material-icons">build</i></h2>
-           <h5 class="center"><a class=" brown-text waves-effect waves-light btn-large">Resources</a></h5>
+           <h5 class="center"><a href="resources.html" class=" brown-text waves-effect waves-light btn-large">Resources</a></h5>
 
             <p class="light">Tools to acheive your goals.</p>
           </div>
@@ -85,25 +88,16 @@
 
     </div>
   </div>
-  <footer class="page-footer teal">
+
+<!--Footer-->
+ <footer class="page-footer teal">
     <div class="container">
       <div class="row">
-        <div class="col l9 s12">
+        <div class="col l6 s12">
           <h5 class="white-text">Company Bio</h5>
-          <p class="grey-text text-lighten-4">We are a team of developer students working on this project like it's our full time job. 
+           <p class="grey-text text-lighten-4">We are a team of developer students working on this project like it's our full time job. 
             Please support our mission</p>
-
-
         </div>
-        <!-- <div class="col l3 s12">
-          <h5 class="white-text">Settings</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
-        </div> -->
         <div class="col l3 s12">
           <h5 class="white-text">Our Team</h5>
           <ul>
@@ -114,20 +108,27 @@
             <li><a class="white-text" href="#!">Wendy Kiddy</a></li>
           </ul>
         </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Social Media</h5>
+          <ul>
+            <li><a class="white-text" href="https://facebook.com/"><i class="fa fa-facebook"></i></a></li>
+            <li><a class="white-text" href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>
+            <li><a class="white-text" href="https://linkedin.com/"><i class="fa fa-linkedin"></i></a></li>
+            <li><a class="white-text" href="https://github.com/"><i class="fa fa-github"></i></a></li>
+          </ul>
+        </div>
       </div>
     </div>
     <div class="footer-copyright">
       <div class="container">
-      <!--Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>-->
       </div>
     </div>
   </footer>
-
-
+  
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="style/js/materialize.js"></script>
   <script src="style/js/init.js"></script>
-
+  <script src="login.js" type="text/javascript"></script> 
   </body>
 </html>

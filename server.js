@@ -2,7 +2,11 @@
 // =============================================================
 var express = require("express");
 var bodyParser = require("body-parser");
+<<<<<<< HEAD
 var users = require('./routes/user_routes.js'); // loads the user routes
+=======
+var exphbs = require('express-handlebars');
+>>>>>>> fb2bf5ae7c251ab4b4703542144231b60951efaa
 
 // Sets up the Express App
 // =============================================================
@@ -25,6 +29,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // parse application/json
 app.use(bodyParser.json());
 
+// Sets up handlebars view engine
+app.engine('handlebars', exphbs({defaultLayout: 'main'}));
+app.set('view engine', 'handlebars');
+
 // Static directory
 app.use(express.static("public"));
 
@@ -32,8 +40,13 @@ app.use(express.static("public"));
 
 
 // Routes
-// =============================================================
-//require("./routes/api-routes.js")(app);
+  var menteeRoutes = require('./routes/mentee_routes');
+  var mentorRoutes = require("./routes/mentor_routes");
+  var htmlRoutes = require('./routes/html_routes');
+
+  menteeRoutes(app);
+  mentorRoutes(app);
+  htmlRoutes(app); 
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================

@@ -6,26 +6,73 @@
     <!-- Respoke client library -->
     <script src="https://cdn.respoke.io/respoke.min.js"></script>
 
-    <!-- jQuery, for this example -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <!--jquery-->     
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-    
-   
     <link rel="stylesheet" type="text/css" href="style.css"></style>
 </head>
 
 <body>
-    <h3 id="status">Not Connected</h3>
-    <div id="login">
-        <input id="endpoint" placeholder="Username" type="text" />
-        <button id="doLogin">Connect</button>
-    </div>
+        
+        <nav class="white" role="navigation">
+                <div class="nav-wrapper container">
+                <a id="logo-container" href="../public/index.html" class="brand-logo">SonRise</a>
+            
+                  <ul class="right hide-on-med-and-down">
+                     <li><a href="../public/m_profile.html">Profile</a></li>
+                      <li><a href="../public/mentor.html">Mentor</a></li>
+                      <li><a href="../public/mentee.html">Mentee</a></li>
+                     <!-- <li><a class="brown-text waves-effect waves-light btn-small">Log in</a></li> -->
+                  </ul>
+            
+                  <ul id="nav-mobile" class="sidenav">
+                    <li><a href="../public/m_profile.html">Profile</a></li>
+                      <li><a href="../public/mentor.html">Mentor</a></li>
+                      <li><a href="../public/mentee.html">Mentee</a></li>
+                      <li><a class="brown-text waves-effect waves-light btn-small">Log out</a></li>
+                  </ul>
+                  <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                </div>
+              </nav>
+            
+              <div id="index-banner" class="parallax-container">
+                <div class="section no-pad-bot">
+                  <div class="container">
+                    <br><br>
+                    <h1 class="header center teal-text text-lighten-2">SonRise</h1><br><br>
+                    <h2  class="header center teal-text text-lighten-2">Let's chat</h2>                             
+                  </div>
+                </div>
+              </div>
+            
+    <div class = "container chat">
+        <row>
+        <h4 id="status">Not Connected</h4>
+        </row>
+        <row>
+
+            <div class = "col s6">
+                <div id="login">
+                <input id="endpoint" placeholder="Username" type="text" />
+                <button id="doLogin">Connect</button>
+                <input id="remoteId" placeholder="User to Message" type="text" /><br/>
+                <textarea id="textToSend" placeholder="Message to Send" rows="2"></textarea><br/>
+                <button id='sendMessage'>Send Message</button>
+                </div>
+            </div>
     
-    <div id="messaging">
-        <ul id="messages"></ul><br />
-        <input id="remoteId" placeholder="User to Message" type="text" /><br/>
-        <textarea id="textToSend" placeholder="Message to Send" rows="2"></textarea><br/>
-        <button id='sendMessage'>Send Message</button>
+            <div class = "col s6">
+                <div id="messaging">
+                <ul id="messages"></ul><br />        
+                </div>
+            </div>
+        </row>
     </div>
+
 
     <script type="text/javascript">
         
@@ -69,9 +116,11 @@
             endpoint.sendMessage({
                 message: messageText
             });
+            
             // Show yourself the message
             $("#messages").append(
-                "<li>" + messageText + "</li>"
+                
+                "<li>" + endpointId + ": " + messageText + "</li>"
             );
             // Clear the text you just sent
             $("#textToSend").val('');

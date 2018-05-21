@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Home Page</title>
+  <title>Resources</title>
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -13,55 +13,47 @@
   <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase.js"></script>
 </head>
 <body>
-  <nav class="white" role="navigation">
+  <nav class="teal" role="navigation">
     <div class="nav-wrapper container">
       <a id="logo-container" href="index.html" class="brand-logo">SonRise</a>
 
       <ul class="right hide-on-med-and-down">
           <li><a href="m_profile.html">Profile</a></li>
-          <!-- <li><a href="mentor.html">Mentor</a></li> -->
-          <!-- <li><a href="mentee.html">Mentee</a></li> -->
-         <!--<li><a class="brown-text waves-effect waves-light btn-small">Log in</a></li> -->
+          <li><a href="mentor.html">Mentor</a></li>
+          <li><a href="mentee.html">Mentee</a></li>
+         <!-- <li><a class="brown-text waves-effect waves-light btn-small">Log in</a></li> -->
       </ul>
 
       <ul id="nav-mobile" class="sidenav">
-         <li><a href="m_profile.html">Profile</a></li>
-          <!-- <li><a href="mentor.html">Mentor</a></li>
-          <li><a href="mentee.html">Mentee</a></li> -->
-         <!-- <li><a class="brown-text waves-effect waves-light btn-small" id="logout">Log out</a></li> -->
+          <li><a href="m_profile.html">Profile</a></li>
+          <li><a href="mentor.html">Mentor</a></li>
+          <li><a href="mentee.html">Mentee</a></li>
+          <li><a href="index.html">
+          <li><a class="brown-text waves-effect waves-light btn-small" id="logout">Log out</a></li>
       </ul>
-
       <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
   </nav>
 
-<body>
   <div id="index-banner" class="parallax-container">
     <div class="section no-pad-bot">
       <div class="container">
-
-        <br>
-        <br>
-        <!-- Modal Trigger -->
-
-        <div class="container" id="newusermodal">
-          <h2 class="header center teal-text text-lighten-2">Welcome!</h2>
-          <h4 class="header center teal-text text-lighten-2">Please answer the following questions:</h4>
-          <input id="txtEmail" type="email" placeholder="email@email.com" />
-          <input id="txtPassword" type="password" placeholder="password" />
+        <br><br>
+        <h1 class="header center teal-text text-lighten-2">SonRise</h1><br><br>
+        <div class="row center">
+          <h5 class="sonrise header col s12 light"> For additional resources click on the links below</h5>
         </div>
-        <div class="modalbuttons1">
-          <a class="waves-effect waves-light btn modal-trigger" id="returning" href="#returnmodal">Returning User</a>
-          <a class="waves-effect waves-light btn modal-trigger" id="newuser" href="#newusermodal">New User</a>
-        </div>
-
-        <!-- Modal Structure -->
-
       </div>
     </div>
     <div class="parallax"></div>
   </div>
-<!--Footer-->
+
+  <div class="container" id="resimage">
+      <br>
+        <img src="images/res.png" alt="Smiley face" height=100% width=100%>
+        <br>
+  </div>
+ <!--Footer-->
  <footer class="page-footer teal">
     <div class="container">
       <div class="row">
