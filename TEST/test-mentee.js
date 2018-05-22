@@ -6,65 +6,45 @@ var chai = require('chai');
 var chaiHttp = require('chai-http');
 var server = require('../server.js');
 var should = chai.should();
+var assert = chai.assert;
 
 chai.use(chaiHttp);
 
-describe('mentee', () => {
-  //  beforeEach ((done) =>{
-   //     mentee.remove({}, (err) => {
-    //        done()
-    //    });
-   // });
 
-describe('/GET mentee', () => {
-    it('it should get all mentee', (done) => {
-        chai.request(server)
-        .get('/mentee')
-        .end((err, res) => {
-            res.should.have.status(200);
-            res.body.should.be.a("array");
-            res.body.length.should.be.eql(0);
-            done();
-
-        });
+describe('mentees', (done) => {
+    it('should start empty', function() {
+      var mentee = [];
+  
+      assert.equal(mentee.length, 0);
     });
-});
-describe('/POST Mentee', () => {
-    it('it should not POST a mentee unavailable',  (done) => {
-        let mentee = {
-            name: "",
-        }
-
-            chai.request(server)
-            .post('/mentee')
-            .send(mentee)
-            .end((err, res) => {
-                res.should.have.status(200);
-                res.body.shold.be.a('object');
-                res.body.should.have.property('errors');
-                res.body.errors.should.have.property('available');
-                res.body.errors.available.should.have.property('kind').eql('required');
-            done();
-            });
-        });  
-
-    it('it should POST available mentee', (done) => {
-    let mentee = {
-        name: "",
-        available: true,
-    }
-
-    chai.request(server)
-        .post('/mentee')
-        .send('mentee'
-        .end((err, res) => {
-             res.should.have.status(200);
-             res.body.should.be.a('object');
-             res.body.should.have.property('message').eql('Mentee successfully added!');
-             res.body.mentee.should.have.property('name');
-             res.body.mentee.should.have.property('available');
-             done();
-            }));
+  });
+  
+  describe('GET /mentees', () => {
+      it('should show available mentees', function() {
+        assert.equal("online".status);
+      });
     });
+  
+describe('API Routes', () => {
+    beforeEach(function(done){
+        models.sequelize.sync({force: true, match: /_test$/, logging: false})
+        .then (() => {
+            return seed(models)
+        }).then(() => {
+            done()
+        })
+    })
+
+    describe('GET /mentee', (done) => {
+        it('should get a list of users /mentee GET', function(done){
+            chai.request(app)
+        .get('./users_routes')
+        .end(function(err, res){
+            expect(res.status).to.equal(200)
+            expect(res).to.be.json
+            expect(res.body).to.be.a('array')
+            done()
+        })
+})
 })
 })

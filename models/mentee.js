@@ -1,8 +1,4 @@
 module.exports = function(sequelize, DataTypes) {
-<<<<<<< HEAD
-    
-=======
->>>>>>> fb2bf5ae7c251ab4b4703542144231b60951efaa
     var Mentee = sequelize.define("Mentee", {
         first_name: {
             type: DataTypes.STRING,

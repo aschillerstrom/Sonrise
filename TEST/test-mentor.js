@@ -6,45 +6,55 @@ var chai = require('chai');
 var chaiHttp = require('chai-http');
 var server = require('../server.js');
 var should = chai.should();
+var assert = chai.assert;
 
 chai.use(chaiHttp);
 
-describe('Mentors', () => {
- // beforeEach((done) => {
-    //    mentor.remove({}, (err) => {
-      //      done();
-      //  });
- //   });
 
+describe('mentor', () => {
+    it('should start empty', function() {
+      var arr = [];
+  
+      assert.equal(arr.length, 0);
+    });
+  });
+  
+  describe('GET /mentor', () => {
+      it('should show available mentees', function() {
+        assert.equal("Available".status);
+      });
+    });
+  
+  
 
-describe('/GET mentor_routes', () => {
+describe('GET /mentor', () => {
     it('it should get all mentors', (done) => {
-        chai.request(server.js)
+        chai.request(server)
         .get('/mentor_routes')
         .end((err, res) => {
-            res.should.have.status(200);
-            res.body.should.be.a('array');
-            res.body.length.should.be.eql(0);
+            expect(res.should.have.status(200));
+            expect(res.body.should.be.a('array'));
+            expect(res.body.length.should.be.eql(0));
             done();
 
         });
     });
 });
-});
-describe('/POST Mentor', () => {
+
+describe('POST /Mentor', () => {
     it('it should not POST a mentor unavailable',  (done) => {
         let mentor = {
             name: "",
         }
 
             chai.request(server)
-            .post('/mentor_routes')
+            .post('/mentor')
             .send(mentor)
             .end((err, res) => {
                 res.should.have.status(200);
                 res.body.should.be.a('object');
                 res.body.should.have.property('errors');
-                res.body.errors.should.have.property('available');
+                res.body.errors.should.have.property('online');
                 res.body.errors.available.should.have.property('kind').eql('required');
             done();
             });
@@ -53,20 +63,19 @@ describe('/POST Mentor', () => {
     it('it should POST available mentors', (done) => {
     let mentor = {
         name: "",
-        available: true,
+        online: true,
     }
 
     chai.request(server)
-        .post('/mentor_routes')
-        .send('mentor'
+        .post('/mentor')
+        .send('mentor')
         .end((err, res) => {
              res.should.have.status(200);
              res.body.should.be.a('object');
              res.body.should.have.property('message').eql('Mentor successfully added!');
              res.body.mentor.should.have.property('name');
-             res.body.mentor.should.have.property('available');
+             res.body.mentor.should.have.property('online');
              done();
-            })
-        )}
-    )}
-)
+        })
+    })
+})
