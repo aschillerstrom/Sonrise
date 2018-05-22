@@ -19,32 +19,8 @@ describe('mentees', (done) => {
     });
   });
   
-  describe('GET /mentees', () => {
+  describe('mentees', () => {
       it('should show available mentees', function() {
         assert.equal("online".status);
       });
     });
-  
-describe('API Routes', () => {
-    beforeEach(function(done){
-        models.sequelize.sync({force: true, match: /_test$/, logging: false})
-        .then (() => {
-            return seed(models)
-        }).then(() => {
-            done()
-        })
-    })
-
-    describe('GET /mentee', (done) => {
-        it('should get a list of users /mentee GET', function(done){
-            chai.request(app)
-        .get('./users_routes')
-        .end(function(err, res){
-            expect(res.status).to.equal(200)
-            expect(res).to.be.json
-            expect(res.body).to.be.a('array')
-            done()
-        })
-})
-})
-})
