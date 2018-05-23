@@ -86,7 +86,7 @@
             developmentMode: true
         });
         // "connect" event fired after successful connection to Respoke
-        client.listen('connect', function() {
+        client.listen('Connect', function() {
             $("#status").html("Connected via SonRise as \"" + endpointId + "\"");
             console.log("Client: ", client);
         });
