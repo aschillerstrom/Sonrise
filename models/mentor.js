@@ -19,13 +19,13 @@ module.exports = function(sequelize, DataTypes) {
                 isAlpha: true,
             }
         },
-        birthday: {
-            type: DataTypes.DATEONLY,
-            allowNull: false,
-            validation: {
-                isDate: true
-            }
-        },
+        // birthday: {
+        //     type: DataTypes.DATEONLY,
+        //     allowNull: false,
+        //     validation: {
+        //         isDate: true
+        //     }
+        // },
         zip_code: {
             type: DataTypes.INTEGER,
             allowNull: false,
@@ -35,10 +35,10 @@ module.exports = function(sequelize, DataTypes) {
                 max: 10,
             }
         },
-        online: {
-            type: DataTypes.BOOLEAN,
-            allowNull: false
-        },
+        // online: {
+        //     type: DataTypes.BOOLEAN,
+        //     allowNull: false
+        // },
         bio: {
             type: DataTypes.TEXT,
             allowNull: true
@@ -52,10 +52,10 @@ module.exports = function(sequelize, DataTypes) {
                 isAlpha: true
             }
         },
-        d_oneData: {
-            type: DataTypes.TEXT,
-            allowNull: false,
-        },
+        // d_oneData: {
+        //     type: DataTypes.TEXT,
+        //     allowNull: false,
+        // },
         d_two: {
             type: DataTypes.STRING,
             allowNull: true,
@@ -64,10 +64,10 @@ module.exports = function(sequelize, DataTypes) {
                 isAlpha: true
             }
         },
-        d_twoData: {
-            type: DataTypes.TEXT,
-            allowNull: true,
-        },
+        // d_twoData: {
+        //     type: DataTypes.TEXT,
+        //     allowNull: true,
+        // },
         d_three: {
             type: DataTypes.STRING,
             allowNull: true,
@@ -76,10 +76,10 @@ module.exports = function(sequelize, DataTypes) {
                 isAlpha: true
             }
         },
-        d_threeData: {
-            type: DataTypes.TEXT,
-            allowNull: true,
-        },
+        // d_threeData: {
+        //     type: DataTypes.TEXT,
+        //     allowNull: true,
+        // },
         d_four: {
             type: DataTypes.STRING,
             allowNull: true,
@@ -88,10 +88,10 @@ module.exports = function(sequelize, DataTypes) {
                 isAlpha: true
             }
         },
-        d_fourData: {
-            type: DataTypes.TEXT,
-            allowNull: true,
-        },
+        // d_fourData: {
+        //     type: DataTypes.TEXT,
+        //     allowNull: true,
+        // },
         d_five: {
             type: DataTypes.STRING,
             allowNull: true,
@@ -100,10 +100,10 @@ module.exports = function(sequelize, DataTypes) {
                 isAlpha: true
             }
         },
-        d_fiveData: {
-            type: DataTypes.TEXT,
-            allowNull: true,
-        },
+        // d_fiveData: {
+        //     type: DataTypes.TEXT,
+        //     allowNull: true,
+        // },
     });
     return Mentor;
 };
