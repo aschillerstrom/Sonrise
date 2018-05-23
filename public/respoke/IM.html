@@ -18,8 +18,41 @@
 
 <body>
 
-  <header>
-    <h1>Chat</h1>
+    <nav class="white" role="navigation">
+        <div class="nav-wrapper container">
+          <a id="logo-container" href="../public/index.html" class="brand-logo">SonRise</a>
+    
+          <ul class="right hide-on-med-and-down">
+              <li><a href="../public/m_profile.html">Profile</a></li>
+              <li><a href="../public/mentor.html">Mentor</a></li>
+              <li><a href="../public/mentee.html">Mentee</a></li>
+             <!-- <li><a class="brown-text waves-effect waves-light btn-small">Log in</a></li> -->
+          </ul>
+    
+          <ul id="nav-mobile" class="sidenav">
+            <li><a href="../public/m_profile.html">Profile</a></li>
+              <li><a href="../public/mentor.html">Mentor</a></li>
+              <li><a href="../public/mentee.html">Mentee</a></li>
+              <li><a class="brown-text waves-effect waves-light btn-small">Log out</a></li>
+          </ul>
+          <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        </div>
+      </nav>
+    
+      <div id="index-banner" class="parallax-container">
+        <div class="section no-pad-bot">
+          <div class="container">
+            <br><br>
+            <h1 class="header center teal-text text-lighten-2">SonRise</h1><br><br>
+            <h2  class="header center teal-text text-lighten-2">Let's group chat</h2>                             
+          </div>
+        </div>
+      </div>
+
+
+
+  <header class = "container">
+    <h1>Let's Chat</h1>
     <input type="text" id="name" placeholder="My name" autofocus />
     <button onclick="setName()">Set my name</button>
     <button onclick="joinRoom()">Join room</button>
@@ -29,7 +62,7 @@
     <button onclick="sendMessage()">Send message</button>
   </header>
   
-  <div id="container">
+  <div id="container" class = "container">
     <div id="chatbox"></div>
   </div>
   
