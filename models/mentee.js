@@ -18,13 +18,13 @@ module.exports = function(sequelize, DataTypes) {
                 isAlpha: true,
             }
         },
-        birthday: {
-            type: DataTypes.DATEONLY,
-            allowNull: false,
-            validation: {
-                isDate: true
-            }
-        },
+        // birthday: {
+        //     type: DataTypes.DATEONLY,
+        //     allowNull: false,
+        //     validation: {
+        //         isDate: true
+        //     }
+        // },
         zip_code: {
             type: DataTypes.INTEGER,
             allowNull: false,
