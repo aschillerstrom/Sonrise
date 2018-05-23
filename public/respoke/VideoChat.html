@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 
 <head>
-    <title>Respoke - Video Chat</title>
+    <title>Skylink - Video Chat</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <!-- Respoke client library -->
-    <script src="https://cdn.respoke.io/respoke.min.js"></script>
+    <script src="//cdn.temasys.io/skylink/skylinkjs/0.6.x/skylink.complete.js"></script>">
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-    <!--jquery-->     
-    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <!--jquery--> 
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css"></style>
     </style>
 </head>
@@ -22,19 +23,19 @@
 
         <nav class="white" role="navigation">
                 <div class="nav-wrapper container">
-                <a id="logo-container" href="../public/index.html" class="brand-logo">SonRise</a>
+                <a id="logo-container" href="../index.html" class="brand-logo">SonRise</a>
             
                   <ul class="right hide-on-med-and-down">
-                      <li><a href="../public/m_profile.html">Profile</a></li>
-                      <li><a href="../public/mentor.html">Mentor</a></li>
-                      <li><a href="../public/mentee.html">Mentee</a></li>
+                      <li><a href="../m_profile.html">Profile</a></li>
+                      <li><a href="../mentor.html">Mentor</a></li>
+                      <li><a href="../mentee.html">Mentee</a></li>
                      <!-- <li><a class="brown-text waves-effect waves-light btn-small">Log in</a></li> -->
                   </ul>
             
                   <ul id="nav-mobile" class="sidenav">
-                     <li><a href="../public/m_profile.html">Profile</a></li>
-                      <li><a href="../public/mentor.html">Mentor</a></li>
-                      <li><a href="../public/mentee.html">Mentee</a></li>
+                     <li><a href="../m_profile.html">Profile</a></li>
+                      <li><a href="../mentor.html">Mentor</a></li>
+                      <li><a href="../mentee.html">Mentee</a></li>
                       <li><a class="brown-text waves-effect waves-light btn-small">Log out</a></li>
                   </ul>
                   <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
@@ -51,97 +52,92 @@
                 </div>
               </div>
     <div class = "container">
-    <h3 id="status">Not Connected</h3>
-    <div id="login">
-        <input id="endpoint" placeholder="Username" type="text" />
-        <button id="doLogin">Connect</button>
-    </div>
-    
-    <div>
-        <input id="remoteId" placeholder="User to Call" type="text" />
-        <button id="doCall">Call</button>
-        <button id="doHangUp">Hang Up</button>
-    </div>
-
-    <!-- The person you're calling -->
-    <div id="remoteVideoSource"></div>
-
-    <!-- You -->
-    <div id="localVideoSource"></div>
-    <br><br><br>
+        <h6>
+            You're in a private room. Please click &quot;Start&quot; to allow access to your microphone and camera.
+        </h6> 
+          <p id="status">Loading room information...</p>
+         
+          <div id="start">
+            <button  onclick="start(event)">Start</button><br/>
+            <video id="myvideo" autoplay></video>
+          </div>
+          
     </div>
 
     <script type="text/javascript">
         
-        var appid = "b4931d40-ff2b-4c46-8487-bf955a75501d";
-        var activeCall;
-        // your username
-        var endpointId;
-        // Create the client object using the AppID 
-        var client = respoke.createClient({
-            appId: appid,
-            developmentMode: true
-        });
-        // "connect" event fired after successful connection to Respoke
-        client.listen('connect', function() {
-            $("#status").html("Connected via SonRise as \"" + endpointId + "\"");
-            console.log("Client: ", client);
-        });
-        // Connect to Respoke when the user clicks "connect"
-        $("#doLogin").click(function() {
-            $("#status").html("Connecting...");
-            endpointId = $("#endpoint").val();
-            client.connect({
-                endpointId: endpointId // username is the endpoint
+        var skylink = new Skylink();
+            skylink.setLogLevel(4);
+            skylink.on('peerJoined', function(peerId, peerInfo, isSelf) {
+            if(isSelf) return; // We already have a video element for our video and don't need to create a new one.
+            var vid = document.createElement('video');
+            vid.autoplay = true;
+            //vid.muted = true; // Added to avoid feedback when testing locally
+            vid.id = peerId;
+            document.body.appendChild(vid);
             });
-        });
-        // The options for our video call including constraints and callbacks
-        var callOptions = {
-            constraints: {audio: true, video: true},
-            // Your video
-            onLocalMedia: function(evt) {
-                setVideo('localVideoSource', evt.element)
-            },
-            // Their video
-            onConnect: function(evt) {
-                setVideo('remoteVideoSource', evt.element)
+
+            skylink.on('incomingStream', function(peerId, stream, isSelf) {
+            if(isSelf) return;
+            var vid = document.getElementById(peerId);
+            attachMediaStream(vid, stream);
+            });
+
+            skylink.on('peerLeft', function(peerId) {
+            var vid = document.getElementById(peerId);
+            document.body.removeChild(vid);
+            });
+
+            skylink.on('mediaAccessSuccess', function(stream) {
+            var vid = document.getElementById('myvideo');
+            attachMediaStream(vid, stream);
+            });
+
+            skylink.init({
+            apiKey: 'b519894b-7ace-43cf-9031-1c5375fefdda', 
+            defaultRoom: 'video'//getRoomId()
+            }, function (error, success) {
+            if (error) {
+                document.getElementById('status').innerHTML = 'Failed retrieval for room information.<br>Error: ' + (error.error.message || error.error);
+            } else {
+                document.getElementById('status').innerHTML = 'Room information has been loaded. Room is ready for user to join.';
+                document.getElementById('start').style.display = 'block';
             }
-        };
-        
-        // Listen for incoming calls
-        client.listen('call', function(evt) {
-            activeCall = evt.call;
-            // We only want to answer if we didn't initiate the call
-            if(activeCall.caller !== true) {
-                activeCall.answer(callOptions);
-                // The hangup event indicates the call is over
-                activeCall.listen('hangup', function () {
-                    hangUp();
-                });
+            });
+
+            function start(event) {
+            event.target.style.visibility = 'hidden';
+            
+            skylink.joinRoom({
+                audio: true,
+                video: true
+            }, function (error, success) {
+                if (error) {
+                document.getElementById('status').innerHTML = 'Failed joining room.<br>' +
+            'Error: ' + (error.error.message || error.error);
+                } else {
+                document.getElementById('status').innerHTML = 'Joined room.';
+                }
+            });
             }
-        });
-        // Call the recipient
-        $("#doCall").click(function() {
-            var recipientId = $("#remoteId").val();
-            var recipientEndpoint = client.getEndpoint({ id: recipientId });
-            activeCall = recipientEndpoint.startVideoCall(callOptions);
-        });
-        // Hangup the call
-        $("#doHangUp").click(hangUp);
-        // Adds the supplied video element as a child of the supplied element
-        function setVideo(elementId, videoElement) {
-            var videoParent = document.getElementById(elementId);
-            videoParent.innerHTML = "";
-            videoParent.appendChild(videoElement);
-        }
-        // End the current call and clean up the DOM
-        function hangUp() {
-            activeCall.hangup();
-            activeCall = null;
-            // Remove the video elements
-            $("#localVideoSource").html("");
-            $("#remoteVideoSource").html("");
-        }
+
+
+            /* Helper functions */
+
+            function getRoomId() {
+            var roomId = document.cookie.match(/roomId=([a-z0-9-]{36})/);
+            if(roomId) {
+                return roomId[1];
+            }
+            else {
+                roomId = skylink.generateUUID();
+                var date = new Date();
+                date.setTime(date.getTime() + (30*24*60*60*1000));
+                document.cookie = 'roomId=' + roomId + '; expires=' + date.toGMTString() + '; path=/';
+                return roomId;
+            }
+            };
+
     </script>
 </body>
 

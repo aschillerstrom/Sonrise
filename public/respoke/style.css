@@ -192,3 +192,15 @@ h5{
 .card {
   color: #795548;
  }
+
+ video {
+  width: 467px;
+  height: 325px;
+  border: 1px solid white;
+  outline: 1px solid #ccc;
+  z-index: 5;
+}
+
+#myvideo {
+  transform: rotateY(-180deg);
+}

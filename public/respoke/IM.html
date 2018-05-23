@@ -1,131 +1,147 @@
 <!DOCTYPE html>
 
 <head>
-    <title>Respoke - IM</title>
+    <title>Skylink - IM</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <!-- Respoke client library -->
-    <script src="https://cdn.respoke.io/respoke.min.js"></script>
-
+    <!-- skylink client library -->
+    <script src="//cdn.temasys.io/skylink/skylinkjs/0.6.x/skylink.complete.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
     <!--jquery-->     
-    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css"></style>
 </head>
 
 <body>
-        
-        <nav class="white" role="navigation">
-                <div class="nav-wrapper container">
-                <a id="logo-container" href="../public/index.html" class="brand-logo">SonRise</a>
-            
-                  <ul class="right hide-on-med-and-down">
-                     <li><a href="../public/m_profile.html">Profile</a></li>
-                      <li><a href="../public/mentor.html">Mentor</a></li>
-                      <li><a href="../public/mentee.html">Mentee</a></li>
-                     <!-- <li><a class="brown-text waves-effect waves-light btn-small">Log in</a></li> -->
-                  </ul>
-            
-                  <ul id="nav-mobile" class="sidenav">
-                    <li><a href="../public/m_profile.html">Profile</a></li>
-                      <li><a href="../public/mentor.html">Mentor</a></li>
-                      <li><a href="../public/mentee.html">Mentee</a></li>
-                      <li><a class="brown-text waves-effect waves-light btn-small">Log out</a></li>
-                  </ul>
-                  <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-                </div>
-              </nav>
-            
-              <div id="index-banner" class="parallax-container">
-                <div class="section no-pad-bot">
-                  <div class="container">
-                    <br><br>
-                    <h1 class="header center teal-text text-lighten-2">SonRise</h1><br><br>
-                    <h2  class="header center teal-text text-lighten-2">Let's chat</h2>                             
-                  </div>
-                </div>
-              </div>
-            
-    <div class = "container chat">
-        <row>
-        <h4 id="status">Not Connected</h4>
-        </row>
-        <row>
 
-            <div class = "col s6">
-                <div id="login">
-                <input id="endpoint" placeholder="Username" type="text" />
-                <button id="doLogin">Connect</button>
-                <input id="remoteId" placeholder="User to Message" type="text" /><br/>
-                <textarea id="textToSend" placeholder="Message to Send" rows="2"></textarea><br/>
-                <button id='sendMessage'>Send Message</button>
-                </div>
-            </div>
+    <nav class="white" role="navigation">
+        <div class="nav-wrapper container">
+          <a id="logo-container" href="../index.html" class="brand-logo">SonRise</a>
     
-            <div class = "col s6">
-                <div id="messaging">
-                <ul id="messages"></ul><br />        
-                </div>
-            </div>
-        </row>
-    </div>
+          <ul class="right hide-on-med-and-down">
+              <li><a href="../m_profile.html">Profile</a></li>
+              <li><a href="../mentor.html">Mentor</a></li>
+              <li><a href="../mentee.html">Mentee</a></li>
+             <!-- <li><a class="brown-text waves-effect waves-light btn-small">Log in</a></li> -->
+          </ul>
+    
+          <ul id="nav-mobile" class="sidenav">
+            <li><a href="../m_profile.html">Profile</a></li>
+              <li><a href="../mentor.html">Mentor</a></li>
+              <li><a href="../mentee.html">Mentee</a></li>
+              <li><a class="brown-text waves-effect waves-light btn-small">Log out</a></li>
+          </ul>
+          <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        </div>
+      </nav>
+    
+      <div id="index-banner" class="parallax-container">
+        <div class="section no-pad-bot">
+          <div class="container">
+            <br><br>
+            <h1 class="header center teal-text text-lighten-2">SonRise</h1><br><br>
+            <h2  class="header center teal-text text-lighten-2">Let's chat</h2>                             
+          </div>
+        </div>
+      </div>
 
+
+
+  <header class = "container">
+    <h6> Enter your first name and click on "Set my name" and then click on "Join room".</h6>
+    <input type="text" id="name" placeholder="My name" autofocus />
+    <button onclick="setName()">Set my name</button>
+    <button onclick="joinRoom()">Join room</button>
+    <button onclick="leaveRoom()">Leave room</button>
+    <br/>
+    <input type="text" id="message" placeholder="My message" />
+    <button onclick="sendMessage()">Send message</button>
+  </header>
+  
+  <div id="container" class = "container">
+    <div id="chatbox"></div>
+  </div>
+
+  <br><br><br><br><br><br><br>
+  
+</body>
 
     <script type="text/javascript">
+var skylink = new Skylink();
+
+skylink.on('peerJoined', function(peerId, peerInfo, isSelf) {
+  var user = 'You';
+  if(!isSelf) {
+    user = peerInfo.userData.name || peerId;
+  }
+  addMessage(user + ' joined the room', 'action');
+});
+
+skylink.on('peerUpdated', function(peerId, peerInfo, isSelf) {
+  if(isSelf) {
+    user = peerInfo.userData.name || peerId;
+    addMessage('You\'re now known as ' + user, 'action');
+  }
+});
+
+skylink.on('peerLeft', function(peerId, peerInfo, isSelf) {
+  var user = 'You';
+  if(!isSelf) {
+    user = peerInfo.userData.name || peerId;
+  }
+  addMessage(user + ' left the room', 'action');
+});
+
+skylink.on('incomingMessage', function(message, peerId, peerInfo, isSelf) {
+  var user = 'You',
+      className = 'you';
+  if(!isSelf) {
+    user = peerInfo.userData.name || peerId;
+    className = 'message';
+  }
+  addMessage(user + ': ' + message.content, className);
+});
+
+skylink.init({
+  appKey: 'b519894b-7ace-43cf-9031-1c5375fefdda',
+  defaultRoom: 'chat'
+}); // Get your own key at https://console.temasys.io
+
+function setName() {
+  var input = document.getElementById('name');
+  skylink.setUserData({
+    name: input.value
+  });
+}
+
+function joinRoom() {
+  skylink.joinRoom();
+}
+
+function leaveRoom() {
+  skylink.leaveRoom();
+}
+
+function sendMessage() {
+  var input = document.getElementById('message');
+  skylink.sendP2PMessage(input.value);
+  input.value = '';
+  input.select();
+}
+
+function addMessage(message, className) {
+  var chatbox = document.getElementById('chatbox'),
+    div = document.createElement('div');
+  div.className = className;
+  div.textContent = message;
+  chatbox.appendChild(div);
+}
+
         
-        var appid = "b4931d40-ff2b-4c46-8487-bf955a75501d";
-        // The ID that other users will identify you by (your username)
-        var endpointId;
-        // Create the client object using the App ID 
-        var client = respoke.createClient({
-            appId: appid,
-            developmentMode: true
-        });
-        // "connect" event fired after successful connection to Respoke
-        client.listen('connect', function() {
-            $("#status").html("Connecting via SonRise as \"" + endpointId + "\"");
-        });
-        // Listen for incoming messages
-        client.listen('message', function(evt) {
-            $("#messages").append(
-                "<li>" + evt.message.message + "</li>"
-            );
-        });
-        // Connect to Respoke when the user clicks "connect"
-        $("#doLogin").click(function() {
-            $("#status").html("Connecting...");
-            endpointId = $("#endpoint").val();
-            client.connect({
-                endpointId: endpointId // your username is the endpoint
-            });
-        });
-        // Send message
-        $("#sendMessage").click(function() {
-            // Get the recipients name
-            var remote = $("#remoteId").val();
-            // Make an endpoint for that recipient
-            var endpoint = client.getEndpoint({
-                id: remote
-            });
-            // Grab the text to send
-            var messageText = $("#textToSend").val();
-            // Send it
-            endpoint.sendMessage({
-                message: messageText
-            });
-            
-            // Show yourself the message
-            $("#messages").append(
-                
-                "<li>" + endpointId + ": " + messageText + "</li>"
-            );
-            // Clear the text you just sent
-            $("#textToSend").val('');
-        });
     </script>
 </body>
 
