@@ -59,23 +59,25 @@ module.exports = function(app) {
         Mentor.create({
             first_name: newMentor.first_name,
             last_name: newMentor.last_name,
-            birthday: newMentor.birthday,
+            online: true,
+            // birthday: newMentor.birthday,
             zip_code: newMentor.zip_code,
-            online: newMentor.online,
+
             bio: newMentor.bio,
             d_one: newMentor.d_one,
-            d_oneData: newMentor.d_oneData,
+            // d_oneData: newMentor.d_oneData,
             d_two: newMentor.d_two,
-            d_twoData: newMentor.d_twoData,
+            // d_twoData: newMentor.d_twoData,
             d_three: newMentor.d_three,
-            d_threeData: newMentor.d_threeData,
+            // d_threeData: newMentor.d_threeData,
             d_four: newMentor.d_four,
-            d_fourData: newMentor.df_fourData,
+            // d_fourData: newMentor.df_fourData,
             d_five: newMentor.d_five,
-            d_fiveData: newMentor.d_fiveData,  
+            // d_fiveData: newMentor.d_fiveData,  
         }).then(function(dbMentor){
             res.json(dbMentor);
-        });
+        })
+        .catch(err => console.log(err));
     });
 
     //update mentor
@@ -84,20 +86,20 @@ module.exports = function(app) {
         Mentor.update({
             first_name: updateMentor.first_name,
             last_name: updateMentor.last_name,
-            birthday: updateMentor.birthday,
+            // birthday: updateMentor.birthday,
             zip_code: updateMentor.zip_code,
-            online: updateMentor.online,
+            // online: updateMentor.online,
             bio: updateMentor.bio,
             d_one: updateMentor.d_one,
-            d_oneData: updateMentor.d_oneData,
+            // d_oneData: updateMentor.d_oneData,
             d_two: updateMentor.d_two,
-            d_twoData: updateMentor.d_twoData,
+            // d_twoData: updateMentor.d_twoData,
             d_three: updateMentor.d_three,
-            d_threeData: updateMentor.d_threeData,
+            // d_threeData: updateMentor.d_threeData,
             d_four: updateMentor.d_four,
-            d_fourData: updateMentor.df_fourData,
+            // d_fourData: updateMentor.df_fourData,
             d_five: updateMentor.d_five,
-            d_fiveData: updateMentor.d_fiveData, 
+            // d_fiveData: updateMentor.d_fiveData, 
         }, {
             where: {
                 id: updateMentor.id 
