@@ -188,6 +188,7 @@ h5{
     margin-right: auto;
     margin-top: 5%;
     width: 40%;
-  
   }
-  
+.card {
+  color: #795548;
+ }
