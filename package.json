@@ -34,6 +34,7 @@
     "sendbird": "^3.0.63",
     "sequelize": "^4.37.8",
     "sequelize-cli": "^4.0.0",
+    "skylinkjs": "^0.6.31",
     "tools": "0.0.0"
   },
   "devDependencies": {
