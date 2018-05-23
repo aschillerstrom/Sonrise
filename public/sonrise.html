@@ -1,0 +1,55 @@
+<a href= "/mentees/profile/{{this.id}}" class="ment_display">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Home Page</title>
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="style/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="style/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase.js"></script>
+</head>
+
+<body>
+   <a>
+       <div class="ment_all row" id="mentee_{{this.id}}">
+        <section class="pic_on_left col s3">
+            <div class="ment_pic round photo spc-sm-s">
+                <img src="ask andrew how to get image source">
+                <h4>Seeking mentorship in:</h4>
+                <h5>{{this.d_one}} <br>
+                    {{this.d_two}} <br>
+                    {{this.d_three}} <br>
+                    {{this.d_four}} <br>
+                    {{this.d_five}}</h5>
+            </div>
+        </section>
+        <section class="info_in_mid col s5">
+            <h4 class="names">{{this.first_name}} {{this.last_name}}</h4>
+                <p class="ment_bio">{{this.bio}} </p>
+        </section>
+        <section class="buttons_on_right col s4">
+            <a class="ment_buttons" href="../respoke/VideoChat.html">
+                <button class="contact_respoke" id="call">Video Call</button>
+            </a>
+            <a class="ment_buttons" href="../respoke/IM.html">
+                <button class="contact_respoke" id="text">Chat</button>
+            </a>
+
+        </section>
+    </div>
+</a>
+
+<!--  Scripts-->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="style/js/materialize.js"></script>
+<script src="style/js/init.js"></script>
+<script src="login.js" type="text/javascript"></script>
+</body>
+
+</html>
