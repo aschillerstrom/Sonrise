@@ -30,10 +30,12 @@ module.exports = function(app) {
     res.sendFile(path.join(_dirname, "../public/profile.html"));
   });
 
-
   app.get("/main", function (req, res) {
     res.sendFile(path.join(_dirname, "../views/main.html"));
   });
 
-};
+app.get("/IM", function (req, res) {
+  res.sendFile(path.join(_dirname, "../respoke/IM.html"));
+});
 
+};
