@@ -34,8 +34,8 @@ module.exports = function(app) {
     res.sendFile(path.join(_dirname, "../views/main.html"));
   });
 
-app.get("/IM", function (req, res) {
-  res.sendFile(path.join(_dirname, "../respoke/IM.html"));
-});
+// app.get("/IM", function (req, res) {
+//   res.sendFile(path.join(_dirname, "../respoke/IM.html"));
+// });
 
 };
