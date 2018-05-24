@@ -5,8 +5,11 @@
 .card .card-content{
   margin: 10%;
 } */
+html{
+  background-color: #26a69a;
+}
 h5{
-  color:aliceblue;
+  color: aliceblue;
   text-align: center;
 }
 .sonrise{
