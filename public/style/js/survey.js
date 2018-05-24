@@ -29,7 +29,7 @@
                 data: JSON.stringify(formData),
                 dataType: 'json'
             }).then(response => {
-                window.location.href = "/mentees";
+                window.location.href = "/connection.html";
             })
         } else {
             $.ajax({
@@ -39,7 +39,7 @@
                 data: JSON.stringify(formData),
                 dataType: 'json'
             }).then(response => {
-                window.location.href = "/mentors";
+                window.location.href = "/connection.html";
             });
 
         };
