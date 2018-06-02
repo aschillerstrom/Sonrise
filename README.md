@@ -1,6 +1,6 @@
 Son Rise
 
-The goal of this project is to provide resources and connections to young men through the access of mentorship.  The applications provides a way to connect young men to mentors and allows for real time support.  
+The goal of this project is to provide resources and connections to young men through the access of mentorship.  The applications provides a way to connect young men to mentors and allows for real time support.  While the future goal is to allow for proper vetting, meet-ups, and a more specific matching system, currently, the site allows for a mentee to selecta mentor and allows for IM and video chatting.
 
 Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
@@ -8,19 +8,19 @@ These instructions will get you a copy of the project up and running on your loc
 Prerequisites
 To run this application you will require node and an npm install to load the necessary packages.
 
-Applicaion Layout
+Application Layout
 
 •	Sign in: First Register or Login
 •	Register: Username password and email then kick to After sign in page
 •	After sign in: 
-•   Questionnaire: 5 dimentions, zip code
-o	Module Mentor or Mentee?
-	Links:
-•	Resources
-•	Connection
-•   Development
-•  	Meet Up via Video Chat
-•   Instant Messenger
+ * Questionnaire: 5 dimentions, zip code
+ * Module Mentor or Mentee?
+ * Links:
+    ** Resources
+    ** Connection
+    ** Development
+    ** Meet Up via Video Chat
+    ** Instant Messenger
 
 
 Installing?
@@ -40,10 +40,11 @@ Sequelize
 Mocha/Chi - Testing
 
 Authors
-Amy Schillerstrom
-Chase Pritchett
-Kat Lewis
-Monir Cederstrom
-Wendy Kiddy
+Amy Schillerstrom (Respoke and SkylinkJS, some frontend)
+Chase Pritchett (routes and handlebars)
+Kat Lewis (testing)
+Monir Cederstrom (databases)
+Wendy Kiddy (front end)
 
-Acknowledgments
+Demo of video chat and IM functions:
+
